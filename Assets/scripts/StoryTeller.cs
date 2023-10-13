@@ -18,7 +18,7 @@ public class StoryTeller : MonoBehaviour
         {
             "I am lost in the jungle",
             "I am really hungry",
-            "Please help me find 'c' for carrot",
+            "Please help me find food",
         };
 
         // Start a coroutine to change the text
