@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1067459607832",
+    "project_id": "danai-for-children",
+    "storage_bucket": "danai-for-children.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067459607832:android:bebbb960777707cebcb26d",
+        "android_client_info": {
+          "package_name": "com.Fast.Danai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGM29robkUtf9O9uGGL_691tcU-mnrTV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
