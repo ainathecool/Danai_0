@@ -16,9 +16,9 @@ public class StoryTeller : MonoBehaviour
         // Initialize your text options
         textOptions = new string[]
         {
-            "I am lost in the jungle",
-            "I am really hungry",
-            "Please help me find food",
+            "Now that you have learned ",
+            "phonics and sounds",
+            "Lets learn sequences",
         };
 
         // Start a coroutine to change the text
