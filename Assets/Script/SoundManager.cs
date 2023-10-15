@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
     private bool muted = false;
-    // Start is called before the first frame update
+    
 
     void Start()
     {
@@ -54,7 +54,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
-    private void updateButtonIcon()
+    public void updateButtonIcon()
     {
         if (muted == false)
         {

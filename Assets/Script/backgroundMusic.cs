@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackgroundMusic : MonoBehaviour
 {
     private static BackgroundMusic backgroundMusic;
+
     void Awake()
     {
         if(backgroundMusic == null)
@@ -16,6 +17,5 @@ public class BackgroundMusic : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
