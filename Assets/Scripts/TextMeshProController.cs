@@ -16,9 +16,9 @@ public class TextMeshProController : MonoBehaviour
         // Initialize your text options
         textOptions = new string[]
         {
-            "Sammy The Squirrel Needs Your Help",
-            "Sammy is looking for the letter s",
-            "Let's Help Sammy The Squirrel!",
+            "Hi! Meet Pablo, the Penguin!",
+            "Pablo loves to play with letters, write stories and sing poems",
+            "Pablo is inviting you to have fun together!",
         };
 
         // Start a coroutine to change the text
