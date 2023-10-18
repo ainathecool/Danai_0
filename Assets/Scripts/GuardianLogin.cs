@@ -7,15 +7,12 @@ using Firebase.Auth;
 using System.Threading.Tasks; // Add this using statement to work with async/await.
 using TMPro;
 
-
 public class GuardianLogin : MonoBehaviour
 {
- 
     public TextMeshProUGUI EmailInput;
     public TextMeshProUGUI PasswordInput;
 
-
-    Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+    private FirebaseAuth auth;
 
     private async void Awake()
     {
@@ -24,7 +21,6 @@ public class GuardianLogin : MonoBehaviour
         {
             FirebaseApp app = FirebaseApp.DefaultInstance;
             auth = FirebaseAuth.GetAuth(app);
-            Debug.Log("Firebase connected");
         }
         else
         {
@@ -37,9 +33,11 @@ public class GuardianLogin : MonoBehaviour
     {
         string email = EmailInput.text;
         string password = PasswordInput.text;
+        Debug.Log("in login fucntion");
 
         try
         {
+            Debug.Log("trying");
             await auth.SignInWithEmailAndPasswordAsync(email, password);
             Debug.Log("User logged in successfully!");
         }
