@@ -4,8 +4,10 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Extensions;
 using Firebase.Auth;
-using System.Threading.Tasks; // Add this using statement to work with async/await.
+using System.Threading.Tasks;
 using TMPro;
+using UnityEngine.SceneManagement; // Add this using statement for SceneManager.
+using Firebase.Database; // Add this using statement for Firebase Realtime Database.
 
 public class GuardianLogin : MonoBehaviour
 {
@@ -40,6 +42,7 @@ public class GuardianLogin : MonoBehaviour
             Debug.Log("trying");
             await auth.SignInWithEmailAndPasswordAsync(email, password);
             Debug.Log("User logged in successfully!");
+            SceneManager.LoadScene("ChildProfiles");
         }
         catch (Exception e)
         {

@@ -51,6 +51,8 @@ public class GuardianSignUp : MonoBehaviour
             FirebaseUser newUser = authResult.User;
             string userId = newUser.UserId;
 
+            Debug.Log("Sign-up successful! User ID: " + userId);
+
             // Create the guardian profile in Firebase Realtime Database.
             await CreateGuardianProfile(userId, name);
 
@@ -61,12 +63,13 @@ public class GuardianSignUp : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError("Sign-up failed: " + e.Message);
+            Debug.LogError("Profile creation failed failed: " + e.Message);
         }
     }
 
     private async Task CreateGuardianProfile(string userId, string guardianName)
     {
+        Debug.Log("in profile creation");
         // Get a reference to the Firebase Realtime Database.
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
