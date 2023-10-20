@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PartnerandSammyAskForHelp.unity
     guid: db6717645d30fc54b855ecd5ad651a35
+  - enabled: 1
+    path: Assets/Scenes/TeachingS.unity
+    guid: 85655968713dd0a42891f03ff0d704e6
+  - enabled: 1
+    path: Assets/Scenes/LetsHelpSammy.unity
+    guid: bdd5feb9672d01542870c49cf2807a9a
   m_configObjects: {}
