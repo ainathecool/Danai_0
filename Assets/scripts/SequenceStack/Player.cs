@@ -41,15 +41,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "milkBox")
+        if (collision.gameObject.tag == "milkBox")
         {
-            // Disable the Rigidbody2D component to stop physics interactions
-            collision.rigidbody.isKinematic = true;
-
-            // Set the position on top of the player's head (you may need to adjust this)
-            collision.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
-
-            collision.rigidbody.velocity = Vector2.zero;
+            SceneManager.LoadScene("Challenge2SequenceStack");
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class GameManager : MonoBehaviour
     public float maxX; // limit the left or right
     public Transform spawnPoint;
     public float spawnRate; // at what rate different blocks fall
-    public int maxMilkBoxes = 3; // maximum number of milk boxes allowed
-    private int currentMilkBoxes = 0;
-
+    public GameObject tapText;
+    public TextMeshProUGUI scoreText;
+    int score = 0;
     bool gameStarted = false;
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !gameStarted)
         {
             StartSpawning();
+            tapText.SetActive(false);
             gameStarted = true;
         }
 
@@ -31,20 +33,15 @@ public class GameManager : MonoBehaviour
 
     void SpawnBlock()
     {
-        if (currentMilkBoxes < maxMilkBoxes)
-        {
+        
             Vector3 spawnPos = spawnPoint.position;
             spawnPos.x = Random.Range(-maxX, maxX);
 
             Instantiate(milkBox, spawnPos, Quaternion.identity);
+        score++;
+        scoreText.text = score.ToString();
 
-            // Increment the current milk boxes counter
-            currentMilkBoxes++;
-        }
-        else
-        {
-            // If the maximum number of milk boxes is reached, stop spawning
-            CancelInvoke("SpawnBlock");
-        }
+        
+       
     }
 }
