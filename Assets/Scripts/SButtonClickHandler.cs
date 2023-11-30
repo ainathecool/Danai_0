@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SButtonClickHandler : MonoBehaviour
 {
     public AudioClip s2Sound;
     public GameObject progressBar;
+    public GameObject snake;
 
     private AudioSource audioSource;
 
@@ -18,25 +17,33 @@ public class SButtonClickHandler : MonoBehaviour
     public void OnButtonClicked()
     {
         audioSource.PlayOneShot(s2Sound);
-        Debug.Log("button clciked");
+        Debug.Log("button clicked");
 
-        // Spiral animation and grow
-        StartCoroutine(SpiralAnimation());
+        if(transform.position != progressBar.transform.position)
+        { 
+            // Spiral animation and grow
+            StartCoroutine(SpiralAnimation());
+        }
+        StartCoroutine(SnakeAnimation());
+
 
         // Optional: You can trigger other actions here.
     }
 
     private IEnumerator SpiralAnimation()
     {
-
         float duration = 5.0f;
         float elapsedTime = 0f;
 
         Vector3 originalScale = transform.localScale;
+        Vector3 originalPosition = transform.position;
 
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
+
+            // Float up to the progress bar
+            transform.position = Vector3.Lerp(originalPosition, progressBar.transform.position, t);
 
             // Spiral animation logic
             float angle = t * 360f * 5f; // 5 rotations
@@ -48,17 +55,50 @@ public class SButtonClickHandler : MonoBehaviour
             transform.localScale = originalScale * scale;
 
             // Set position based on the spiral motion
-            transform.position = new Vector3(x, y, 0f) + progressBar.transform.position;
+            transform.position += new Vector3(x, y, 0f);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-
+        // Ensure that the object reaches the progress bar precisely
         transform.position = progressBar.transform.position;
-        transform.localScale = originalScale * 2f; // Adjust the final scale as needed
 
+        // Wait for a moment
+        yield return new WaitForSeconds(1.0f);
+
+        // Go back to the original size
+        transform.localScale = originalScale;
 
         // Optional: You can trigger other actions here.
+
+        // Start the snake animation
+        StartCoroutine(SnakeAnimation());
+    }
+
+    private IEnumerator SnakeAnimation()
+    {
+        float snakeDuration = 5.0f;
+        float snakeElapsedTime = 0f;
+
+        Vector3 originalSnakePosition = snake.transform.position;
+
+        while (snakeElapsedTime < snakeDuration)
+        {
+            float snakeT = snakeElapsedTime / snakeDuration;
+
+            // Jiggle animation logic
+            float snakeX = Mathf.Sin(snakeT * Mathf.PI * 2f) * 0.1f; // Adjust the jiggle amount
+            float snakeY = Mathf.Cos(snakeT * Mathf.PI * 2f) * 0.1f; // Adjust the jiggle amount
+
+            // Set position based on the jiggle motion
+            snake.transform.position = originalSnakePosition + new Vector3(snakeX, snakeY, 0f);
+
+            snakeElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure that the snake reaches the original position precisely
+        snake.transform.position = originalSnakePosition;
     }
 }
