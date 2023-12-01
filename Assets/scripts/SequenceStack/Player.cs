@@ -43,7 +43,14 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "milkBox")
         {
-            SceneManager.LoadScene("Challenge2SequenceStack");
+            // Disable the Rigidbody2D component to stop physics interactions
+            collision.rigidbody.isKinematic = true;
+
+            // Set the position on top of the player's head and stop further downward movement
+            collision.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+
+            // Set the velocity of the milkBox to zero
+            collision.rigidbody.velocity = Vector2.zero;
         }
     }
 }

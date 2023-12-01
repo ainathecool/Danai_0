@@ -1147,11 +1147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1705274691044156385, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1705274691044156385, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.79
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 1705274691044156385, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1185,13 +1185,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705274691044156386, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
+      propertyPath: m_Size.y
+      value: 7.5997987
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705274691044156386, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03989935
+      objectReference: {fileID: 0}
     - target: {fileID: 1705274691044156389, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
       propertyPath: m_Name
       value: milkBox
       objectReference: {fileID: 0}
     - target: {fileID: 1705274691044156389, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c6acb038d51ba46a3ea355ea910d38, type: 3}

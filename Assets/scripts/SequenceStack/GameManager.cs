@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     int score = 0;
     bool gameStarted = false;
 
+    private Transform milkBoxStack; // Parent object for stacking milk boxes
+
     // Update is called once per frame
     void Update()
     {
@@ -23,25 +25,25 @@ public class GameManager : MonoBehaviour
             tapText.SetActive(false);
             gameStarted = true;
         }
-
     }
 
     void StartSpawning()
     {
+        milkBoxStack = new GameObject("MilkBoxStack").transform; // Create an empty game object to serve as the parent
         InvokeRepeating("SpawnBlock", 0.5f, spawnRate); // This will call the function again and again
     }
 
     void SpawnBlock()
     {
-        
-            Vector3 spawnPos = spawnPoint.position;
-            spawnPos.x = Random.Range(-maxX, maxX);
+        Vector3 spawnPos = spawnPoint.position;
+        spawnPos.x = Random.Range(-maxX, maxX);
 
-            Instantiate(milkBox, spawnPos, Quaternion.identity);
+        GameObject newMilkBox = Instantiate(milkBox, spawnPos, Quaternion.identity);
+
+        // Set the milk box as a child of the parent stack
+        newMilkBox.transform.parent = milkBoxStack;
+
         score++;
         scoreText.text = score.ToString();
-
-        
-       
     }
 }
