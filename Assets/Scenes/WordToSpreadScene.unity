@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 134046112}
   - component: {fileID: 134046111}
   - component: {fileID: 134046110}
+  - component: {fileID: 134046114}
+  - component: {fileID: 134046113}
   m_Layer: 5
   m_Name: Life of a Dyslexic
   m_TagString: Untagged
@@ -206,7 +208,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 134046111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 134046114}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &134046111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +259,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134046108}
   m_CullTransparentMesh: 1
+--- !u!114 &134046113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134046108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &134046114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134046108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513887022
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +295,8 @@ GameObject:
   - component: {fileID: 513887026}
   - component: {fileID: 513887025}
   - component: {fileID: 513887024}
+  - component: {fileID: 513887028}
+  - component: {fileID: 513887027}
   m_Layer: 5
   m_Name: What Dyslexia is
   m_TagString: Untagged
@@ -328,7 +368,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 513887025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 513887028}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &513887025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +419,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513887022}
   m_CullTransparentMesh: 1
+--- !u!114 &513887027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513887022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &513887028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513887022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &731137250
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +455,8 @@ GameObject:
   - component: {fileID: 731137254}
   - component: {fileID: 731137253}
   - component: {fileID: 731137252}
+  - component: {fileID: 731137256}
+  - component: {fileID: 731137255}
   m_Layer: 5
   m_Name: Facts about Dyslexia
   m_TagString: Untagged
@@ -450,7 +528,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 731137253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 731137256}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &731137253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +579,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731137250}
   m_CullTransparentMesh: 1
+--- !u!114 &731137255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731137250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &731137256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731137250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747548872
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +974,7 @@ RectTransform:
   - {fileID: 731137251}
   - {fileID: 1987325774}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1014,6 +1128,8 @@ GameObject:
   - component: {fileID: 1118981663}
   - component: {fileID: 1118981662}
   - component: {fileID: 1118981661}
+  - component: {fileID: 1118981665}
+  - component: {fileID: 1118981664}
   m_Layer: 5
   m_Name: What Dyslexia is not
   m_TagString: Untagged
@@ -1085,7 +1201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1118981662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1118981665}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1118981662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1252,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118981659}
   m_CullTransparentMesh: 1
+--- !u!114 &1118981664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118981659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1118981665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118981659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243994544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1288,8 @@ GameObject:
   - component: {fileID: 1243994548}
   - component: {fileID: 1243994547}
   - component: {fileID: 1243994546}
+  - component: {fileID: 1243994550}
+  - component: {fileID: 1243994549}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -1207,7 +1361,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1243994547}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1243994550}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1243994547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,6 +1412,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243994544}
   m_CullTransparentMesh: 1
+--- !u!114 &1243994549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243994544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1243994550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243994544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275093415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1637,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458584427
 GameObject:
@@ -1680,6 +1870,8 @@ GameObject:
   - component: {fileID: 1656087057}
   - component: {fileID: 1656087056}
   - component: {fileID: 1656087055}
+  - component: {fileID: 1656087059}
+  - component: {fileID: 1656087058}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1751,7 +1943,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1656087056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1656087059}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1656087056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,6 +1994,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656087053}
   m_CullTransparentMesh: 1
+--- !u!114 &1656087058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656087053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1656087059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656087053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670304492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +2075,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 231f3d8c3e720c141a164fad870460c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1872,7 +2100,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1738032446
 GameObject:
@@ -2040,7 +2268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1924932964
 GameObject:
@@ -2189,6 +2417,8 @@ GameObject:
   - component: {fileID: 1987325777}
   - component: {fileID: 1987325776}
   - component: {fileID: 1987325775}
+  - component: {fileID: 1987325779}
+  - component: {fileID: 1987325778}
   m_Layer: 5
   m_Name: Dyslexia in Pakistan
   m_TagString: Untagged
@@ -2260,7 +2490,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987325776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1987325779}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1987325776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2299,6 +2541,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987325773}
   m_CullTransparentMesh: 1
+--- !u!114 &1987325778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987325773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1987325779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987325773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1ae21d8d7e4fa478f79972ebd910f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2024438329
 GameObject:
   m_ObjectHideFlags: 0
