@@ -5,7 +5,9 @@ public class TraceImage : MonoBehaviour
 {
     public Material lineMaterial;
     private bool isDrawing = false;
+    private List<GameObject> lineObjects = new List<GameObject>();
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
+    private float gapThreshold = 0.1f; // Adjust the gap threshold as needed
 
     private void Update()
     {
@@ -27,15 +29,20 @@ public class TraceImage : MonoBehaviour
 
     private void StartDrawing()
     {
-        // Create a new LineRenderer for the current drawing
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        // Create a new empty GameObject for the current drawing
+        GameObject lineObject = new GameObject("LineObject");
+        lineObject.transform.parent = transform; // Set the current object as the parent
+
+        // Add a LineRenderer component to the new GameObject
+        LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
         lineRenderer.material = lineMaterial;
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
         lineRenderer.sortingLayerName = "Default"; // Adjust to your sorting layer
-        lineRenderer.sortingOrder = 4; // Adjust the sorting order
+        lineRenderer.sortingOrder = 2; // Adjust the sorting order
 
+        lineObjects.Add(lineObject);
         lineRenderers.Add(lineRenderer);
 
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -59,9 +66,16 @@ public class TraceImage : MonoBehaviour
             LineRenderer currentLineRenderer = lineRenderers[lineRenderers.Count - 1];
 
             int currentPositionCount = currentLineRenderer.positionCount;
-            currentLineRenderer.positionCount = currentPositionCount + 1;
-            currentLineRenderer.SetPosition(currentPositionCount, mousePosition);
-            Debug.Log("Drawing line point");
+
+
+            // Check the distance between the last point of the previous line and the new point
+            if (currentPositionCount == 0 || Vector2.Distance(currentLineRenderer.GetPosition(currentPositionCount - 1), mousePosition) > gapThreshold)
+            {
+                // Add the new point to the line
+                currentLineRenderer.positionCount = currentPositionCount + 1;
+                currentLineRenderer.SetPosition(currentPositionCount, mousePosition);
+                Debug.Log("Drawing line point");
+            }
         }
     }
 }
