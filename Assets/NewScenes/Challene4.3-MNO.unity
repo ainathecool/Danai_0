@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff11333dfcfb2b541b6b73885747111b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintE: {fileID: 0}
-  EApple: {fileID: 0}
-  draggedApple: {fileID: 0}
+  hintE: {fileID: 1675339179}
+  EApple: {fileID: 1675339179}
+  draggedApple: {fileID: 677300472}
 --- !u!114 &134483829
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -507,6 +507,7 @@ MonoBehaviour:
   source: {fileID: 154068971}
   pickUpClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
   dropClip: {fileID: 8300000, guid: de454d52db42408448df222dc9981278, type: 3}
+  nextScene: challenge4
   draggedbody: {fileID: 154068968}
   hintslot: {fileID: 1716433762}
 --- !u!58 &154068970

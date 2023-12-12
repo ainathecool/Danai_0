@@ -731,7 +731,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4fc9c781cd2738b4e94378c05a44b43b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23236f62a3406894599c10a5b6c27fc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1264,6 +1264,7 @@ MonoBehaviour:
   dropClip: {fileID: 8300000, guid: 5b08fa1138cf2cb4187fedfff994b1d0, type: 3}
   draggedbody: {fileID: 760144631}
   hintslot: {fileID: 1021617421}
+  swipeDuration: 1
 --- !u!58 &760144633
 CircleCollider2D:
   m_ObjectHideFlags: 0
