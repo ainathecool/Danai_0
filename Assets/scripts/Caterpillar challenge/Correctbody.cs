@@ -7,7 +7,7 @@ public class Correctbody : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip pickUpClip, dropClip;
-    [SerializeField] private string nextSceneName; // Add this lines
+  
     private bool dragging, placed;
     private Vector2 offset, originalPosition;
     private PuzzleSlot _slot;
@@ -44,10 +44,7 @@ public class Correctbody : MonoBehaviour
             transform.position = hintslot.transform.position;
             source.PlayOneShot(dropClip);
             placed = true;
-            if (!string.IsNullOrEmpty(nextSceneName))
-            {
-                SceneManager.LoadScene(nextSceneName);
-            }
+          
         }
         else
         {
