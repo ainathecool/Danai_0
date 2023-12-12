@@ -7,7 +7,7 @@ public class Correctbody : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip pickUpClip, dropClip;
-  
+    // Add this lines
     private bool dragging, placed;
     private Vector2 offset, originalPosition;
     private PuzzleSlot _slot;
