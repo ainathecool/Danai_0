@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzlePeice : MonoBehaviour
 {
-    
+
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip pickUpClip, dropClip;
-    private bool dragging,placed;
+    [SerializeField] private string nextScene;
+    private bool dragging, placed;
     private Vector2 offset, originalPosition;
     private PuzzleSlot _slot;
-    
+
     public GameObject aApple;
     public GameObject draggedApple;
     public GameObject hintA;
-   
+
 
 
 
@@ -45,6 +47,8 @@ public class PuzzlePeice : MonoBehaviour
             transform.position = hintA.transform.position;
             source.PlayOneShot(dropClip);
             placed = true;
+            SceneManager.LoadScene(nextScene);
+
 
         }
         else
@@ -52,16 +56,16 @@ public class PuzzlePeice : MonoBehaviour
             transform.position = originalPosition;  //here the grabbed alphabet goes back to its original position 
             dragging = false;
         }
-      
-       
-        
+
+
+
     }
 
-   
+
 
     Vector2 GetMousePos()
     {
         return (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-    
+
 }

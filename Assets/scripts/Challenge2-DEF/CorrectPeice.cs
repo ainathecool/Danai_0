@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CorrectPeice : MonoBehaviour
 {
 
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip pickUpClip, dropClip;
+    [SerializeField] private string nextScene;
     private bool dragging, placed;
     private Vector2 offset, originalPosition;
     private PuzzleSlot _slot;
@@ -45,6 +47,7 @@ public class CorrectPeice : MonoBehaviour
             transform.position = hintE.transform.position;
             source.PlayOneShot(dropClip);
             placed = true;
+            SceneManager.LoadScene(nextScene);
 
         }
         else
