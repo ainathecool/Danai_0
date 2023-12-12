@@ -13,8 +13,6 @@ public class Correctbody : MonoBehaviour
     public GameObject draggedbody;
     public GameObject hintslot;
 
-    public float swipeDuration = 1.0f;
-
     void Awake()
     {
         originalPosition = transform.position;
@@ -44,7 +42,7 @@ public class Correctbody : MonoBehaviour
             source.PlayOneShot(dropClip);
             placed = true;
 
-            StartCoroutine(LoadNextSceneWithSwipe());
+            StartCoroutine(LoadNextSceneWithDelay());
         }
         else
         {
@@ -53,7 +51,7 @@ public class Correctbody : MonoBehaviour
         }
     }
 
-    IEnumerator LoadNextSceneWithSwipe()
+    IEnumerator LoadNextSceneWithDelay()
     {
         // Wait for the drop sound to finish playing
         yield return new WaitForSeconds(dropClip.length);
@@ -74,13 +72,7 @@ public class Correctbody : MonoBehaviour
             // Check if the next scene is within the total number of scenes
             if (SceneExistsInBuildSettings(nextSceneName))
             {
-                // Perform scene swipe animation
-                StartCoroutine(SceneSwipeAnimation());
-
-                // Wait for the animation to finish
-                yield return new WaitForSeconds(swipeDuration);
-
-                // Load the next scene
+                // Load the next scene with a smooth transition
                 SceneManager.LoadScene(nextSceneName);
             }
             else
@@ -93,20 +85,6 @@ public class Correctbody : MonoBehaviour
         {
             // If the current scene name doesn't follow the expected format, load the "lastScene"
             SceneManager.LoadScene("lastScene");
-        }
-    }
-
-    IEnumerator SceneSwipeAnimation()
-    {
-        float elapsedTime = 0;
-        Vector3 initialPosition = Camera.main.transform.position;
-
-        while (elapsedTime < swipeDuration)
-        {
-            float t = elapsedTime / swipeDuration;
-            Camera.main.transform.position = Vector3.Lerp(initialPosition, new Vector3(initialPosition.x - 5, initialPosition.y, initialPosition.z), t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
         }
     }
 

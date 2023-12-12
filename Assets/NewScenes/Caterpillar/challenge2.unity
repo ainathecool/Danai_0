@@ -1470,7 +1470,6 @@ MonoBehaviour:
   dropClip: {fileID: 8300000, guid: 27eb0c933ff8c6b4cbf3cc6f44f00e83, type: 3}
   draggedbody: {fileID: 1020914873}
   hintslot: {fileID: 835574153}
-  swipeDuration: 1
 --- !u!58 &1020914875
 CircleCollider2D:
   m_ObjectHideFlags: 0
