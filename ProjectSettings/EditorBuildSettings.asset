@@ -20,4 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LetsHelpSammy.unity
     guid: bdd5feb9672d01542870c49cf2807a9a
+  - enabled: 1
+    path: Assets/Scenes/VR_s1.unity
+    guid: 251e47dd569541541b1a74dcc0f3eb78
+  - enabled: 1
+    path: Assets/Scenes/VR_s2.unity
+    guid: 1b8e96061f97f8d418150df731c60ccd
+  - enabled: 1
+    path: Assets/Scenes/VR_s3.unity
+    guid: 34889d1604d5bd545a3634ac497f46a8
+  - enabled: 1
+    path: Assets/Scenes/VR_s4.unity
+    guid: 4f08431a7ec5a584f8f5675032260054
   m_configObjects: {}
