@@ -17,5 +17,6 @@ public class SkipButtonHandler : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
     }
 
+
  
 }

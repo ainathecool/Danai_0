@@ -6,12 +6,8 @@ using UnityEngine.SceneManagement; // This is needed to work with scene manageme
 public class SceneLoader : MonoBehaviour
 {
     public string sceneToLoad; // The name of the scene you want to load.
-<<<<<<< HEAD
-    public int waitTime;
 
-=======
     public float waitTime;
->>>>>>> phase2
     void Start()
     {
         StartCoroutine(LoadSceneAfterDelay());
@@ -24,8 +20,4 @@ public class SceneLoader : MonoBehaviour
         // Load the specified scene.
         SceneManager.LoadScene(sceneToLoad);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> phase2

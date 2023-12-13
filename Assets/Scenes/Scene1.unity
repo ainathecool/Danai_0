@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ALPHABET ADVENTURE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
-  m_sharedMaterial: {fileID: -9151948573293329737, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
+  m_sharedMaterial: {fileID: 21498551263709160, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -386,8 +386,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: with Pablo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
-  m_sharedMaterial: {fileID: -9151948573293329737, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
+  m_sharedMaterial: {fileID: 21498551263709160, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -497,13 +497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -33, y: 45}
   m_SizeDelta: {x: 200, y: 50}
-=======
-  m_AnchoredPosition: {x: -231, y: 224}
-  m_SizeDelta: {x: 762.1, y: 379}
->>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959570976
 MonoBehaviour:
@@ -525,30 +520,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< HEAD
   m_text: 'Welcome to
 
     ALPHABET ADVENTURE
 
     with Pablo'
-=======
-  m_text: Welcome to the
->>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
-  m_sharedMaterial: {fileID: -9151948573293329737, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
+  m_sharedMaterial: {fileID: 21498551263709160, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-<<<<<<< HEAD
     rgba: 4278232063
   m_fontColor: {r: 1, g: 0.63933533, b: 0, a: 1}
-=======
-    rgba: 4287635216
-  m_fontColor: {r: 0.060875725, g: 0.12131156, b: 0.5660378, a: 1}
->>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -565,24 +551,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-<<<<<<< HEAD
   m_fontSize: 30
   m_fontSizeBase: 30
-=======
-  m_fontSize: 100
-  m_fontSizeBase: 100
->>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-<<<<<<< HEAD
   m_VerticalAlignment: 256
-=======
-  m_VerticalAlignment: 4096
->>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
