@@ -3000,6 +3000,7 @@ MonoBehaviour:
   source: {fileID: 1664874641}
   pickUpClip: {fileID: 8300000, guid: 20c8ad2bd2ffa4e419efe74bb8d65f51, type: 3}
   dropClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
+  initial: {fileID: 8300000, guid: bb15111916bace740bc47c21dfb546b3, type: 3}
   nextScene: gameExcercises
   aApple: {fileID: 1789951377}
   draggedApple: {fileID: 1664874638}

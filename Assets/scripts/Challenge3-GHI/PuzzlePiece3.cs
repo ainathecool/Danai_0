@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PuzzlePiece3 : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
-    [SerializeField] private AudioClip pickUpClip, dropClip;
+    [SerializeField] private AudioClip pickUpClip, dropClip,initial;
     [SerializeField] private string nextScene;
 
     private bool dragging, placed;
@@ -20,6 +20,15 @@ public class PuzzlePiece3 : MonoBehaviour
     void Awake()
     {
         originalPosition = transform.position;
+        source = GetComponent<AudioSource>();
+
+        // Add a delay of 2 seconds (you can adjust the delay time as needed)
+        Invoke("PlayInitialSound", 2f);
+    }
+
+    void PlayInitialSound()
+    {
+        source.PlayOneShot(initial);
     }
 
     void Update()

@@ -242,6 +242,7 @@ MonoBehaviour:
   source: {fileID: 18401551}
   pickUpClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
   dropClip: {fileID: 8300000, guid: d5ed3e83997ea4742b5d22c6ce0dc2be, type: 3}
+  initial: {fileID: 8300000, guid: 1dd71340a12c4404c87cabcc41427472, type: 3}
   nextScene: Challenge4.2-JKLM
   aApple: {fileID: 641007811}
   draggedApple: {fileID: 18401549}

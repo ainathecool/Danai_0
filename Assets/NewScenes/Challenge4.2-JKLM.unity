@@ -337,6 +337,7 @@ MonoBehaviour:
   source: {fileID: 13313088}
   pickUpClip: {fileID: 8300000, guid: bc50bf892bdd75f48ad541e1262e883e, type: 3}
   dropClip: {fileID: 8300000, guid: bc50bf892bdd75f48ad541e1262e883e, type: 3}
+  initial: {fileID: 8300000, guid: 9fc00a24d25ff1043b39ee68fd54d733, type: 3}
   nextScene: Challene4.3-MNO
   aApple: {fileID: 2125847758}
   draggedApple: {fileID: 13313084}

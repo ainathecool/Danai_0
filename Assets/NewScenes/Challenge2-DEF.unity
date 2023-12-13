@@ -3132,9 +3132,10 @@ MonoBehaviour:
   source: {fileID: 1949683740}
   pickUpClip: {fileID: 8300000, guid: 00f1ef867974a2f41a1b1e5d77b1768b, type: 3}
   dropClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
+  initial: {fileID: 8300000, guid: bb22354fac23f87428769ea500c1737b, type: 3}
   nextScene: Challenge3-GHI
   EApple: {fileID: 431798969}
-  draggedApple: {fileID: 0}
+  draggedApple: {fileID: 1949683737}
   hintE: {fileID: 167216125}
 --- !u!82 &1949683740
 AudioSource:
