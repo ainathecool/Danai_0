@@ -405,8 +405,8 @@ GameObject:
   - component: {fileID: 312528271}
   - component: {fileID: 312528270}
   - component: {fileID: 312528269}
-  - component: {fileID: 312528268}
   - component: {fileID: 312528267}
+  - component: {fileID: 312528272}
   m_Layer: 5
   m_Name: SkipButton
   m_TagString: Untagged
@@ -531,23 +531,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &312528268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312528265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a14184171be7755468b689407fbbe97f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s1Sound: {fileID: 8300000, guid: 1e4898f8ad5d55a45ab004101e99f35f, type: 3}
-  s1Button: {fileID: 0}
-  s2Button: {fileID: 0}
-  s3Button: {fileID: 0}
-  progressBar: {fileID: 0}
 --- !u!114 &312528269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,9 +575,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 312528268}
-        m_TargetAssemblyTypeName: SButtonController, Assembly-CSharp
-        m_MethodName: OnHintsButtonClick
+      - m_Target: {fileID: 312528272}
+        m_TargetAssemblyTypeName: SkipButtonHandler, Assembly-CSharp
+        m_MethodName: OnSkipButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -642,6 +625,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312528265}
   m_CullTransparentMesh: 1
+--- !u!114 &312528272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312528265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655c45498522e6741ad809f8f389b1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: aLevel1
 --- !u!1 &361611633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1390,7 @@ GameObject:
   - component: {fileID: 1431036685}
   - component: {fileID: 1431036684}
   - component: {fileID: 1431036686}
+  - component: {fileID: 1431036687}
   m_Layer: 0
   m_Name: teachingA
   m_TagString: Untagged
@@ -1564,6 +1561,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1431036687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431036683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5392cb230b0f5419518d23a117f889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: aLevel1
+  waitTime: 14
 --- !u!1 &1432323423
 GameObject:
   m_ObjectHideFlags: 0

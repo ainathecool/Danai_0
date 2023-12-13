@@ -600,7 +600,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cfe2cf8255e6d6148b5976e7270899c4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -795,6 +795,8 @@ MonoBehaviour:
   startSpeakingButton: {fileID: 699261910}
   sceneInputField: VR_s3
   referenceAudio: {fileID: 8300000, guid: 1e4898f8ad5d55a45ab004101e99f35f, type: 3}
+  tryAgain: {fileID: 8300000, guid: b6f17697ae6ffef4283d2b990ceef7c0, type: 3}
+  congrats: {fileID: 8300000, guid: cfe2cf8255e6d6148b5976e7270899c4, type: 3}
 --- !u!1 &751155867
 GameObject:
   m_ObjectHideFlags: 0

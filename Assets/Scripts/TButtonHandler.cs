@@ -86,6 +86,11 @@ public class TButtonHandler : MonoBehaviour
                 originalPosition = t2.transform.position;
                 StartCoroutine(AnimationT2());
             }
+            else
+            {
+                PlayerPrefs.SetInt("complete", 1);
+                PlayerPrefs.Save();
+            }
 
         }
     }

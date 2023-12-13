@@ -8,7 +8,7 @@ public class SoundRecordingController : MonoBehaviour
     public string sceneInputField;
 
     // Reference audio clip for 'sss' sound
-    public AudioClip referenceAudio;
+    public AudioClip referenceAudio, tryAgain, congrats;
 
     // The maximum recording duration in seconds
     private float maxRecordingDuration = 3f;
@@ -21,6 +21,7 @@ public class SoundRecordingController : MonoBehaviour
 
     // Variable to store the reference to the microphone recording
     private AudioClip recordedAudioClip;
+    private AudioSource audioSource;
 
     // Original color of the button
     private Color originalButtonColor;
@@ -29,8 +30,11 @@ public class SoundRecordingController : MonoBehaviour
     {
         // Save the original color of the button
         originalButtonColor = startSpeakingButton.image.color;
+        // Initialize audioSource
+        audioSource = GetComponent<AudioSource>();
 
         Debug.Log("Start method called.");
+       // audioSource.PlayOneShot(congrats);
     }
 
     public void OnStartSpeakingClick()
@@ -98,6 +102,7 @@ public class SoundRecordingController : MonoBehaviour
         }
         else
         {
+            audioSource.PlayOneShot(tryAgain);
             // Incorrect sound, provide feedback
             Debug.Log("Try again with the 'ssss' sound.");
         }
@@ -127,7 +132,7 @@ public class SoundRecordingController : MonoBehaviour
         float recordedZeroCrossings = GetZeroCrossingRate(recordedSamples);
 
         // Set a threshold for acceptable variation
-        float threshold = 0.1f;
+        float threshold = 0.3f;
 
         // Compare the Zero Crossing Rate
         if (Mathf.Abs(referenceZeroCrossings - recordedZeroCrossings) > threshold)

@@ -117,6 +117,11 @@ public class AButtonHandler : MonoBehaviour
            
             StartCoroutine(SpiralAnimation());
         }
+        else
+        {
+            PlayerPrefs.SetInt("complete", 1);
+            PlayerPrefs.Save();
+        }
     }
 
     private IEnumerator SpiralAnimation()

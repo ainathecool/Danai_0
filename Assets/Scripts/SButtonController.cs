@@ -36,6 +36,12 @@ public class SButtonController : MonoBehaviour
                 originalPosition= s3Button.transform.position;
                 StartCoroutine(HoverAnimationS3());
             }
+            else
+            {
+                //stroing this here bcs it means all 3 buttons are on prpgress bar now, game is finished, move ahead
+                PlayerPrefs.SetInt("complete", 1);
+                PlayerPrefs.Save();
+            }
             
         }
     }
