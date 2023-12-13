@@ -23,8 +23,15 @@ public class PuzzlePeice : MonoBehaviour
     void Awake()
     {
         originalPosition = transform.position;
-        source.PlayOneShot(initial);
+        source = GetComponent<AudioSource>();
 
+        // Add a delay of 2 seconds (you can adjust the delay time as needed)
+        Invoke("PlayInitialSound", 2f);
+    }
+
+    void PlayInitialSound()
+    {
+        source.PlayOneShot(initial);
     }
     void Update()
     {
