@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655c45498522e6741ad809f8f389b1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: gameExercises
+  nextSceneName: gameExcercises
 --- !u!114 &379862451
 MonoBehaviour:
   m_ObjectHideFlags: 0

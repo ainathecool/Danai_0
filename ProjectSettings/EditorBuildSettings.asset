@@ -95,7 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mScene2.unity
     guid: 838a16c399f4aca4d8b69a9519207457
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -341,4 +341,127 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamesMenuDraft.unity
     guid: fb657659b6f831049b8c923289080223
+  - enabled: 1
+    path: Assets/NewScenes/AppleChallengeScene1.unity
+    guid: 5ca672654fa014d459dc0641e2ca046b
+  - enabled: 1
+    path: Assets/NewScenes/Challene4.3-MNO.unity
+    guid: dbd340a72f0e49e4e8ca3567404aed0c
+  - enabled: 1
+    path: Assets/NewScenes/Challenge1.unity
+    guid: 0e6b4d9f11f3bcb4aadb481cee79eb74
+  - enabled: 1
+    path: Assets/NewScenes/Challenge1-ABC.unity
+    guid: cae10078b72ff6949932c8e367402242
+  - enabled: 1
+    path: Assets/NewScenes/challenge2SequenceStack.unity
+    guid: 8c219026ddfe8e343a34618b71709fe2
+  - enabled: 1
+    path: Assets/NewScenes/Challenge3-GHI.unity
+    guid: 174e6d4b7491f3149801e3038f7a3b9a
+  - enabled: 1
+    path: Assets/NewScenes/Challenge4.2-JKLM.unity
+    guid: 2b3d4c8161a81a24385907b0511b2418
+  - enabled: 1
+    path: Assets/NewScenes/Challenge4.4-PQR.unity
+    guid: 7ba6a216a7ef5be47a41359bf7ccb587
+  - enabled: 1
+    path: Assets/NewScenes/Challenge5.1.unity
+    guid: 2e3853f5cf0be484abafc2cfcdfdc809
+  - enabled: 1
+    path: Assets/NewScenes/challenge5.2.unity
+    guid: cba09acdae54cb448b62338ae4fd9180
+  - enabled: 1
+    path: Assets/NewScenes/gameExcercises.unity
+    guid: 964d1af9fbd8e334bb71148ac08bdf6d
+  - enabled: 1
+    path: Assets/NewScenes/GameScene.unity
+    guid: ac013bc05dd26b94d83bc5951a05e7a9
+  - enabled: 1
+    path: Assets/NewScenes/Challenge2-DEF.unity
+    guid: 85f0ff7de7708714ba74eaa20f0ad20b
+  - enabled: 1
+    path: Assets/NewScenes/StartScreen.unity
+    guid: 4bca13ee979759047bdfbde90468c349
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge1.unity
+    guid: 1741962b144dd6640ae3288d894fc6b7
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge2.unity
+    guid: ef3f262e92cdf064d8264b95e6b4ac8b
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge3.unity
+    guid: 93877347c23441745b8a27788dbb59b0
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge4.unity
+    guid: f1075b8d55e30e249979badf9cda345c
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge5.unity
+    guid: 5ba989e05f93a1148ae8a7741dcbec4d
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge6.unity
+    guid: e89b2071afd0a154582a11b809ee9a2b
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge7.unity
+    guid: 2ac1f88d578e93542bfaf54e0507eaee
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge8.unity
+    guid: 2e3e33760f9819f44a5f7d5ab2fcb3ad
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge9.unity
+    guid: f4e2bd821c95a0c43bdc7d5a72e7a005
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge10.unity
+    guid: 3feffc972a2d80649b77e5a573a9528d
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge11.unity
+    guid: ec4c4329ee77e874881ca5736f4faaae
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge12.unity
+    guid: b9457f86f09f92d4ea6003795b0253a2
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge13.unity
+    guid: e0f473f408efe5e4bb33f722976584a0
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge14.unity
+    guid: 477dd05a6ddfbce45ba6a4a35aaa14c1
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge15.unity
+    guid: 2246035cf61bd33478752283e96c6476
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge16.unity
+    guid: 7278ef9b63bc6dc469fd27262e08e1ec
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge17.unity
+    guid: 0cb0a00a65a1b8b4bbfc315abc04fe24
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge18.unity
+    guid: 6eb21272b4e85cb4c8eeed612ba9efdc
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge19.unity
+    guid: ef4cdaca83965a34a98956d8a7d6183a
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge20.unity
+    guid: f0473f56833d4d945bde58f1d963499d
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge21.unity
+    guid: 9ba6b42cb5531d64cb797d94a55dbb40
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge22.unity
+    guid: ea4c879e9bcf0c64aa2fa05ccdc69482
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge23.unity
+    guid: 1607acb98846ee840bff2d63778d9558
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge24.unity
+    guid: 68447ec98d875d04d934ad91a282b650
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/challenge25.unity
+    guid: e9f255975286ca04d858f62e389c6910
+  - enabled: 1
+    path: Assets/NewScenes/Caterpillar/lastScene.unity
+    guid: ddd5cc84076ad774eb4866503e4b9fbd
+  - enabled: 1
+    path: Assets/NewScenes/IntroToSquirrel.unity
+    guid: ca9888cbbf8ce0c4e89ed3c7bdf96856
   m_configObjects: {}

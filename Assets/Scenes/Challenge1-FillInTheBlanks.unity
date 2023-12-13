@@ -189,13 +189,7 @@ SpriteRenderer:
   m_Size: {x: 4.14, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!4 &99738606
 Transform:
   m_ObjectHideFlags: 0
@@ -326,11 +320,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &261548906
@@ -498,11 +488,7 @@ SpriteRenderer:
   m_Size: {x: 4.14, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1413644750
@@ -586,11 +572,7 @@ SpriteRenderer:
   m_Size: {x: 12, y: 6.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1576409491
@@ -674,11 +656,7 @@ SpriteRenderer:
   m_Size: {x: 4.14, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1656839232
@@ -762,11 +740,7 @@ SpriteRenderer:
   m_Size: {x: 4.14, y: 8.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
-=======
-  m_WasSpriteAssigned: 0
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2106808470
