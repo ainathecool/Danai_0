@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c270be573784c1941a42489802c5ff05
+=======
+<<<<<<< HEAD
+guid: 8b8ffea23adca7842a3b228706a50058
+=======
+guid: 254d5b25572163f499ec938e0a5a475c
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
+>>>>>>> main
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -11,8 +19,16 @@ TrueTypeFontImporter:
   fontNames:
   - Sassoon Primary Std
   fallbackFontReferences:
+<<<<<<< HEAD
   - {fileID: 12800000, guid: a9a8265d6491aee4686f8585358a981b, type: 3}
   - {fileID: 12800000, guid: 3d6df50cd577f9640b88a002fc5c0bd9, type: 3}
+=======
+<<<<<<< HEAD
+  - {fileID: 12800000, guid: a40c26dcaaa52364f9563dfdff682e70, type: 3}
+=======
+  - {fileID: 12800000, guid: 4425221c9608eb74d87f616a852a72b8, type: 3}
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
+>>>>>>> main
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

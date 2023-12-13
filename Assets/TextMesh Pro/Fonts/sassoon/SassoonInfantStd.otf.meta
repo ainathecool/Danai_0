@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 22efa335bf16c3a479d2b28906269233
+=======
+<<<<<<< HEAD
+guid: b82f3a3911a62ec4ba65a5a9108bd1b2
+=======
+guid: 21b5cf62f8e6bf34294ceaf6d6886143
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
+>>>>>>> main
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,9 +18,13 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Sassoon Infant Std
+<<<<<<< HEAD
   fallbackFontReferences:
   - {fileID: 12800000, guid: 1593c1a238fe26f40b73f43f3265fc7f, type: 3}
   - {fileID: 12800000, guid: d19204d41a700d647b9293cbfea76f81, type: 3}
+=======
+  fallbackFontReferences: []
+>>>>>>> main
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

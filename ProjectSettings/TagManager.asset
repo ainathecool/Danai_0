@@ -4,8 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - milkBox
   - hintC
+=======
+<<<<<<< HEAD
+  - hintA
+=======
+  - Name
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
@@ -40,8 +48,13 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+<<<<<<< HEAD
   - name: Background
     uniqueID: 235424089
+=======
+  - name: BackgroundLayer
+    uniqueID: 3725907807
+>>>>>>> main
     locked: 0
   - name: Default
     uniqueID: 0
