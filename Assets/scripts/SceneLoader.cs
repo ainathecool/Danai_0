@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement; // This is needed to work with scene management.
+
+public class SceneLoader : MonoBehaviour
+{
+    public string sceneToLoad; // The name of the scene you want to load.
+<<<<<<< HEAD
+    public int waitTime;
+
+=======
+    public float waitTime;
+>>>>>>> phase2
+    void Start()
+    {
+        StartCoroutine(LoadSceneAfterDelay());
+    }
+
+    IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(waitTime); // Wait for 5 seconds.
+
+        // Load the specified scene.
+        SceneManager.LoadScene(sceneToLoad);
+    }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> phase2
