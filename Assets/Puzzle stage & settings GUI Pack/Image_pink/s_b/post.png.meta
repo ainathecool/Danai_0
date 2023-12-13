@@ -22,8 +22,11 @@ TextureImporter:
     normalMapFilter: 0
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     flipGreenChannel: 0
 >>>>>>> phase2
+>>>>>>> main
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -31,8 +34,12 @@ TextureImporter:
 <<<<<<< HEAD
   ignoreMasterTextureLimit: 0
 =======
+<<<<<<< HEAD
+  ignoreMasterTextureLimit: 0
+=======
   ignoreMipmapLimit: 0
 >>>>>>> phase2
+>>>>>>> main
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -73,8 +80,11 @@ TextureImporter:
   applyGammaDecoding: 1
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
   swizzle: 50462976
 >>>>>>> phase2
+>>>>>>> main
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -89,8 +99,11 @@ TextureImporter:
     overridden: 0
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     ignorePlatformSupport: 0
 >>>>>>> phase2
+>>>>>>> main
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -104,10 +117,15 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Server
+<<<<<<< HEAD
+=======
 =======
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
@@ -115,6 +133,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
 >>>>>>> phase2
+>>>>>>> main
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -125,8 +144,11 @@ TextureImporter:
     overridden: 0
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     ignorePlatformSupport: 0
 >>>>>>> phase2
+>>>>>>> main
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -139,6 +161,8 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
@@ -163,6 +187,7 @@ TextureImporter:
 =======
     ignorePlatformSupport: 0
 >>>>>>> phase2
+>>>>>>> main
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -184,9 +209,15 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
 =======
+<<<<<<< HEAD
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+=======
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
 >>>>>>> phase2
+>>>>>>> main
   userData: 
   assetBundleName: 
   assetBundleVariant: 
