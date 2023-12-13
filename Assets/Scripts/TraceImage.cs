@@ -40,7 +40,11 @@ public class TraceImage : MonoBehaviour
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
         lineRenderer.sortingLayerName = "Default"; // Adjust to your sorting layer
+<<<<<<< HEAD
         lineRenderer.sortingOrder = 2; // Adjust the sorting order
+=======
+        lineRenderer.sortingOrder = 3; // Adjust the sorting order
+>>>>>>> c29492a6be98735df11d0da80ebd0bcb77f71bec
 
         lineObjects.Add(lineObject);
         lineRenderers.Add(lineRenderer);
