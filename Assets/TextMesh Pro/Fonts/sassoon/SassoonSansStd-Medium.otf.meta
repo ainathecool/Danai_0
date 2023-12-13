@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 604d05bfd73e9d940b75688875a64756
+=======
+guid: 67173fc3dd9e7894b95fafa35af70b32
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +14,12 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Sassoon Sans Std
+<<<<<<< HEAD
   fallbackFontReferences: []
+=======
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 93c504d811136d84c85c9de707f4e439, type: 3}
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
