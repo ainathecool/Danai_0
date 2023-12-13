@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: ce04a0854e70c334c8a1a8536da72df8
+=======
+<<<<<<< HEAD
+guid: fd7e0e5fcd3e5844cb56d3282c84269d
+=======
+guid: e92826d6388e9fc48860c4d56a7283fa
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
+>>>>>>> main
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sassoon Primary
+<<<<<<< HEAD
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 18bb9daf9ac63c04bac45ae555b6f17a, type: 3}
+=======
+  fallbackFontReferences: []
+>>>>>>> main
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
