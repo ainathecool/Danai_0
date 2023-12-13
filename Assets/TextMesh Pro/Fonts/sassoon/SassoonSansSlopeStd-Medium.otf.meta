@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: f1ac11eaca338a6469d910868fde8985
+=======
 guid: e49fee07d80294848b02eb9d6ebd7b7f
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,8 +14,12 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Sassoon Sans Slope Std
+<<<<<<< HEAD
+  fallbackFontReferences: []
+=======
   fallbackFontReferences:
   - {fileID: 12800000, guid: f0ffbe9f33b00f84eaccf7cd34bb7a1e, type: 3}
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

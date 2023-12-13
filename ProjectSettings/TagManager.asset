@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - hintA
+=======
   - Name
+>>>>>>> 9ce418ef6e83fb369b8a9647445db36ad7bffd84
   layers:
   - Default
   - TransparentFX
