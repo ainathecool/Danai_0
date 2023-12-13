@@ -2697,8 +2697,9 @@ MonoBehaviour:
   source: {fileID: 1739673267}
   pickUpClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
   dropClip: {fileID: 8300000, guid: 9ee9b7a0cc2fad7458aa9ddfb06f1434, type: 3}
+  initial: {fileID: 8300000, guid: 80b51d6bcec3f814bb87f2a4179ce2bd, type: 3}
   nextScene: Challenge2-DEF
-  aApple: {fileID: 0}
+  aApple: {fileID: 177462501}
   draggedApple: {fileID: 1739673264}
   hintA: {fileID: 177462501}
 --- !u!82 &1739673267

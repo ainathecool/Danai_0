@@ -7,7 +7,7 @@ public class PuzzlePeice : MonoBehaviour
 {
 
     [SerializeField] private AudioSource source;
-    [SerializeField] private AudioClip pickUpClip, dropClip;
+    [SerializeField] private AudioClip pickUpClip, dropClip,initial;
     [SerializeField] private string nextScene;
     private bool dragging, placed;
     private Vector2 offset, originalPosition;
@@ -23,6 +23,8 @@ public class PuzzlePeice : MonoBehaviour
     void Awake()
     {
         originalPosition = transform.position;
+        source.PlayOneShot(initial);
+
     }
     void Update()
     {
