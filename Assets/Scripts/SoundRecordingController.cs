@@ -6,6 +6,7 @@ public class SoundRecordingController : MonoBehaviour
 {
     public Button startSpeakingButton;
     public string sceneInputField;
+    public float threshold;
 
     // Reference audio clip for 'sss' sound
     public AudioClip referenceAudio, tryAgain, congrats;
@@ -132,7 +133,7 @@ public class SoundRecordingController : MonoBehaviour
         float recordedZeroCrossings = GetZeroCrossingRate(recordedSamples);
 
         // Set a threshold for acceptable variation
-        float threshold = 0.3f;
+       // float threshold = 0.3f;
 
         // Compare the Zero Crossing Rate
         if (Mathf.Abs(referenceZeroCrossings - recordedZeroCrossings) > threshold)
