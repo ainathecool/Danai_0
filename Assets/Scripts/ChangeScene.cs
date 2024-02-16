@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void MoveToScene(int sceneID)
+    public void MoveToScene()
     {
-        SceneManager.LoadScene(sceneID);
+        SceneManager.LoadScene("VowelScreen2");
     }
 }
