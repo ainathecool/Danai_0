@@ -464,4 +464,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NewScenes/IntroToSquirrel.unity
     guid: ca9888cbbf8ce0c4e89ed3c7bdf96856
+  - enabled: 1
+    path: Assets/Scenes/Phases4,5/DLS_words.unity
+    guid: 18a41769d32efa6499a26be7b18cbb2d
+  - enabled: 1
+    path: Assets/Scenes/Phases4,5/DLS_game.unity
+    guid: 9624878e7b0ae404eaf4622e9cd0c0b5
+  - enabled: 1
+    path: Assets/Scenes/Phases4,5/DynamicLearningScene.unity
+    guid: b38f51679f627aa42931efac24f442f7
   m_configObjects: {}
