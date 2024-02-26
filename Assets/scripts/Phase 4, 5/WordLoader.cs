@@ -77,6 +77,9 @@ public class WordLoader : MonoBehaviour
                             // Set the word text
                             wordText.text = randomWordKey;
 
+                            //set it in playerprefs to use it in the next scene 
+                            PlayerPrefs.SetString("CorrectWord", randomWordKey);
+
                             // Load the image from local assets
                             string imagePath = "Images/" + randomWordKey;
                             Texture2D texture = Resources.Load<Texture2D>(imagePath);
