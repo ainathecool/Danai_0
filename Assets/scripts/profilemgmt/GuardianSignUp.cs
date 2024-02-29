@@ -16,6 +16,8 @@ public class GuardianSignUp : MonoBehaviour
     public TextMeshProUGUI PasswordInput;
     public TextMeshProUGUI ConfirmPasswordInput;
 
+    public TextMeshProUGUI NameError, EmailError, PasswordError, PasswordMatchError;
+
     private FirebaseAuth auth;
 
     private async void Awake()
@@ -39,9 +41,38 @@ public class GuardianSignUp : MonoBehaviour
         string password = PasswordInput.text;
         string confirmPassword = ConfirmPasswordInput.text;
 
+        // Clear previous error messages
+        NameError.text = "";
+        EmailError.text = "";
+        PasswordError.text = "";
+        PasswordMatchError.text = "";
+
+        // Validate name
+        if (string.IsNullOrEmpty(name))
+        {
+            NameError.text = "Name cannot be empty.";
+            return;
+        }
+
+        // Validate email format
+        if (!IsValidEmail(email))
+        {
+            EmailError.text = "Invalid email format.";
+            Debug.Log("invalid email");
+            return;
+        }
+
+        // Validate password length
+        if (password.Length < 6)
+        {
+            PasswordError.text = "Password must be at least 6 characters long.";
+            return;
+        }
+
+        // Validate password match
         if (password != confirmPassword)
         {
-            Debug.LogError("Passwords do not match.");
+            PasswordMatchError.text = "Passwords do not match.";
             return;
         }
 
@@ -63,7 +94,21 @@ public class GuardianSignUp : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError("Profile creation failed failed: " + e.Message);
+            Debug.LogError("Profile creation failed: " + e.Message);
+            EmailError.text = e.Message;
+        }
+    }
+
+    bool IsValidEmail(string email)
+    {
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == email;
+        }
+        catch
+        {
+            return false;
         }
     }
 

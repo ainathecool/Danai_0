@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/bScene1.unity
     guid: 13706c20a74611a4f9bdd3c7e2200b33
   - enabled: 1
-    path: Assets/Scenes/ChildProfiles.unity
+    path: Assets/Scenes/ProfileMgmt/ChildProfiles.unity
     guid: 022d277f2e7499b49b5ae932f7c4a8bb
   - enabled: 1
     path: Assets/Scenes/cScene2.unity
@@ -105,7 +105,7 @@ EditorBuildSettings:
     path: Assets/Scenes/s_complete.unity
     guid: b9c0bcfb160fa6b46a80f710d3dbd5de
   - enabled: 1
-    path: Assets/Scenes/GuardianSignup.unity
+    path: Assets/Scenes/ProfileMgmt/GuardianSignup.unity
     guid: 9feb2a474811f4d42ae9e126082cf22d
   - enabled: 1
     path: Assets/Scenes/nLevel1.unity
@@ -129,7 +129,7 @@ EditorBuildSettings:
     path: Assets/Scenes/jScene1.unity
     guid: 5d4cc32889c018e4ab4ccafc463a0154
   - enabled: 1
-    path: Assets/Scenes/GuardianLogin.unity
+    path: Assets/Scenes/ProfileMgmt/GuardianLogin.unity
     guid: 2e49df5b4d79f1448bb175743d8c7a75
   - enabled: 1
     path: Assets/Scenes/iScene2.unity
