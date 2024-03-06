@@ -13,91 +13,116 @@ public class SetChildPin : MonoBehaviour
 {
     public Image[] pinCircles; // Reference to the 4 circles where the PIN is displayed.
     public Button[] pinPad; // Reference to the icons for setting the PIN.
-    public Button buttonClicked;
+    public TextMeshProUGUI pinError;
+  
 
-
-    private int currentIndex; // Tracks the current position in the PIN.
     private string[] currentPin; // Stores the current PIN as icons.
-
-    private int pinIndex = 0; // Store the index in PlayerPrefs for pinIndex.
 
     private void Start()
     {
         // Initialize the PIN variables.
         currentPin = new string[4];
+        // Reset the PIN PlayerPrefs values to null.
+        for (int i = 0; i < currentPin.Length; i++)
+        {
+            PlayerPrefs.SetString("pin_" + i, null);
+        }
+        PlayerPrefs.SetString("PIN", null);
 
-        // Load pinIndex from PlayerPrefs or set it to 0 if it doesn't exist.
-        pinIndex = PlayerPrefs.GetInt("pinIndex", 0);
+
+    }
+
+    public void OnPinPadClicked(int iconIndex)
+    {
 
         // Load the PIN from PlayerPrefs.
         for (int i = 0; i < currentPin.Length; i++)
         {
             currentPin[i] = PlayerPrefs.GetString("pin_" + i, "");
+            Debug.Log(currentPin[i]);
             if (currentPin[i] != "")
             {
-                currentIndex = i + 1;
                 pinCircles[i].sprite = pinPad[int.Parse(currentPin[i])].image.sprite;
             }
         }
-
-        Debug.Log("current index: " + currentIndex);
-        Debug.Log("current pin: " + currentPin);
-        
-
-
-    
-    }
-
-    public void OnPinPadClicked(int iconIndex)
-    {
-      
-
-        
         // Icon from the pin pad is clicked.
-        if (currentIndex < 4)
+        for (int i = 0; i < currentPin.Length; i++)
         {
-            currentPin[currentIndex] = iconIndex.ToString(); // Store the icon's index as part of the PIN.
-            pinCircles[currentIndex].sprite = pinPad[iconIndex].image.sprite; // Display the selected icon in the circle.
-            currentIndex++;
-
+            if (currentPin[i] == "")
+            {
+                currentPin[i] = iconIndex.ToString(); // Store the icon's index as part of the PIN.
+                Debug.Log("in pin clickd: " + currentPin[i] + "and i: " + i);
+                pinCircles[i].sprite = pinPad[iconIndex].image.sprite; // Display the selected icon in the circle.
+                PlayerPrefs.SetString("pin_" + i, currentPin[i]);
+                pinError.text = "";
+                string imageName = pinCircles[i].sprite.name;
+                PlayerPrefs.SetString("PIN", PlayerPrefs.GetString("PIN", "") + imageName + " ");
+                break;
+            }
         }
+       
     }
-
     public void OnClearButtonClicked()
     {
-        if (currentIndex > 0)
+        // Check the pin circles starting from the last one.
+        for (int i = currentPin.Length - 1; i >= 0; i--)
         {
-            currentIndex--;
-            currentPin[currentIndex] = null; // Remove the icon from the PIN.
-            pinCircles[currentIndex].sprite = null; // Clear the corresponding circle.
+            if (pinCircles[i].sprite != null)
+            {
+                // If the current pin circle is filled, clear it and update PlayerPrefs.
+                string imageName = pinCircles[i].sprite.name;
+                string pinString = PlayerPrefs.GetString("PIN", "");
 
-          
+                // Find the last occurrence of the image name in the PIN string.
+                int indexToRemove = pinString.LastIndexOf(imageName + " ");
+                if (indexToRemove != -1)
+                {
+                    // Remove the image name from the PIN string.
+                    PlayerPrefs.SetString("PIN", pinString.Remove(indexToRemove, imageName.Length + 1));
+                }
+
+                pinCircles[i].sprite = null;
+                PlayerPrefs.SetString("pin_" + i, null);
+                currentPin[i] = ""; // Remove the icon from the PIN.
+                break; // Exit the loop after clearing one pin circle.
+            }
         }
     }
+
+
 
     public void OnNextButtonClicked()
     {
-        Debug.Log(currentIndex);
-        // Check if the PIN is complete.
-       
-        {
+
+        Debug.Log("pin: " + PlayerPrefs.GetString("PIN"));
+      
             // Store the PIN in PlayerPrefs.
-            for (int i = 0; i < currentPin.Length; i++)
-            {
-                PlayerPrefs.SetString("pin_" + i, currentPin[i]);
-            }
+         
+                if (pinCircles[0].sprite.name != "pinCircle" && pinCircles[1].sprite.name != "pinCircle" && pinCircles[2].sprite.name != "pinCircle" && pinCircles[3].sprite.name != "pinCircle"
+            && pinCircles[0].sprite != null && pinCircles[1].sprite != null && pinCircles[2].sprite != null && pinCircles[3].sprite != null)
+                {
+                    // Try loading the next scene.
+                    try
+                    {
+                        
+                        SceneManager.LoadScene("SetChildAvatar"); // Replace with your actual scene name.
 
-            PlayerPrefs.SetInt("pinIndex", pinIndex);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("Error loading the next scene: " + e.Message);
+                        pinError.text = "Enter Complete Pin!";
+                    }
 
-            // Try loading the next scene.
-            try
+                }
+            else
             {
-                SceneManager.LoadScene("SetChildAvatar"); // Replace with your actual scene name.
+                pinError.text = "Enter Complete Pin!";
             }
-            catch (Exception e)
-            {
-                Debug.LogError("Error loading the next scene: " + e.Message);
-            }
-        }
+            
+
+          
+        
     }
+
 }

@@ -1,3 +1,4 @@
+
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +35,7 @@ public class GuardianChildList : MonoBehaviour
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
         DataSnapshot dataSnapshot = await databaseReference.Child("guardians").Child(userId).Child("name").GetValueAsync();
         string guardianName = (string)dataSnapshot.Value;
-        GuardianNameText.text = "Guardian: " + guardianName;
+        GuardianNameText.text = "Hello " + guardianName;
     }
 
     private async void FetchAndDisplayChildProfiles()
@@ -51,10 +52,23 @@ public class GuardianChildList : MonoBehaviour
                 GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
 
                 // Set the child's name on the row.
-                string childName = (string)childSnapshot.Child("name").Value;
+                string childName = (string)childSnapshot.Child("Name").Value;
                 childProfileRow.GetComponentInChildren<TextMeshProUGUI>().text = childName;
 
-                // You can add more UI elements (e.g., avatar images) here.
+                // Fetch the avatar name from the database.
+                string avatarName = (string)childSnapshot.Child("Avatar").Value;
+
+                // Load the corresponding sprite from Resources/Avatars/.
+                Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
+                if (avatarSprite != null)
+                {
+                    // If the sprite is found, assign it to the Image component in the row.
+                    Image avatarImage = childProfileRow.GetComponentInChildren<Image>();
+                    if (avatarImage != null)
+                    {
+                        avatarImage.sprite = avatarSprite;
+                    }
+                }
             }
         }
         else
@@ -64,8 +78,10 @@ public class GuardianChildList : MonoBehaviour
         }
     }
 
+
     public void GoToAddChildInfoScene()
     {
         SceneManager.LoadScene("AddChildProfiles"); // Replace with your actual scene name.
     }
 }
+
