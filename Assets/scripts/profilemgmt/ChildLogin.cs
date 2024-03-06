@@ -117,7 +117,7 @@ public class ChildLogin : MonoBehaviour
             try
             {
                 Debug.Log("success");
-                SceneManager.LoadScene("ChildHome");
+                SceneManager.LoadScene("childHome");
             }
             catch (Exception e)
             {

@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 2123205452}
   - component: {fileID: 2123205455}
   - component: {fileID: 2123205454}
-  - component: {fileID: 2123205453}
+  - component: {fileID: 2123205456}
   m_Layer: 5
   m_Name: bg
   m_TagString: Untagged
@@ -506,20 +506,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00020552, y: -0.0000064373}
   m_SizeDelta: {x: 81.75, y: 95.86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2123205453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123205451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c5392cb230b0f5419518d23a117f889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: GuardianSignup
-  waitTime: 5
 --- !u!114 &2123205454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,3 +544,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123205451}
   m_CullTransparentMesh: 1
+--- !u!114 &2123205456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123205451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29d9840ac9ec3347aba529b8943991c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginSceneName: GuardianLogin
+  childProfilesSceneName: ChildProfiles
+  delayBeforeLoad: 5
