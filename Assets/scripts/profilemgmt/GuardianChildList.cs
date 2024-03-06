@@ -13,8 +13,10 @@ using Firebase.Database;
 public class GuardianChildList : MonoBehaviour
 {
     public TextMeshProUGUI GuardianNameText;
-    public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
-    public GameObject ChildProfileRowPrefab; // Prefab for child profile rows.
+    public TextMeshProUGUI ChildName;
+    public Image Avatar;
+    //public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
+    //public GameObject ChildProfileRowPrefab; // Prefab for child profile rows.
 
     private DatabaseReference databaseReference;
 
@@ -22,6 +24,9 @@ public class GuardianChildList : MonoBehaviour
     {
         // Initialize the Firebase Realtime Database reference.
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        ChildName.text = null;
+        Avatar.sprite = null;
+
 
         // Fetch and display the guardian's name.
         FetchAndDisplayGuardianName();
@@ -49,26 +54,20 @@ public class GuardianChildList : MonoBehaviour
             foreach (var childSnapshot in dataSnapshot.Children)
             {
                 // Instantiate a child profile row from the prefab.
-                GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
+              //  GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
 
                 // Set the child's name on the row.
                 string childName = (string)childSnapshot.Child("Name").Value;
-                childProfileRow.GetComponentInChildren<TextMeshProUGUI>().text = childName;
+                ChildName.text = childName;
+               // childProfileRow.GetComponentInChildren<TextMeshProUGUI>().text = childName;
 
                 // Fetch the avatar name from the database.
                 string avatarName = (string)childSnapshot.Child("Avatar").Value;
 
                 // Load the corresponding sprite from Resources/Avatars/.
                 Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
-                if (avatarSprite != null)
-                {
-                    // If the sprite is found, assign it to the Image component in the row.
-                    Image avatarImage = childProfileRow.GetComponentInChildren<Image>();
-                    if (avatarImage != null)
-                    {
-                        avatarImage.sprite = avatarSprite;
-                    }
-                }
+                Avatar.sprite = avatarSprite;
+              
             }
         }
         else
