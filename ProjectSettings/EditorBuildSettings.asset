@@ -476,4 +476,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProfileMgmt/childHome.unity
     guid: f0c139fb1c3147e44bbb3ea394ce3fd6
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DynamicLearningScene.unity
+    guid: b38f51679f627aa42931efac24f442f7
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DLS_words.unity
+    guid: 18a41769d32efa6499a26be7b18cbb2d
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DLS_game2.unity
+    guid: 8734ec0a5882b1344a292ae6bc3a3a45
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DLS_game.unity
+    guid: 9624878e7b0ae404eaf4622e9cd0c0b5
   m_configObjects: {}
