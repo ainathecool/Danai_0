@@ -273,6 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14184171be7755468b689407fbbe97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  s1Sound: {fileID: 0}
+  s1Button: {fileID: 0}
+  s2Button: {fileID: 0}
+  s3Button: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!114 &290845154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1603,8 +1608,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Can you write
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
-  m_sharedMaterial: {fileID: -9151948573293329737, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2194,10 +2199,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784131242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddee4eaf2875242448ca504baa56b40f, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!60 &1784131246
 PolygonCollider2D:
   m_ObjectHideFlags: 0

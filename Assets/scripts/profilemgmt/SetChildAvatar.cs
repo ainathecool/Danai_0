@@ -56,7 +56,8 @@ public class SetChildAvatar : MonoBehaviour
        
         {
             // Store the selected avatar index and go to the next scene.
-            PlayerPrefs.SetInt("ChildAvatar", selectedAvatarIndex);
+            PlayerPrefs.SetString("ChildAvatar", avatarDisplay.sprite.name);
+            Debug.Log("acatar chosen: " + PlayerPrefs.GetString("ChildAvatar"));
             SceneManager.LoadScene("SetChildPartner"); // Replace with your actual scene name.
         }
     }

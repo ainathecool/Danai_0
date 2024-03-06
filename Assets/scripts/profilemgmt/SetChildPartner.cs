@@ -43,7 +43,7 @@ public class SetChildPartner : MonoBehaviour
         string childName = PlayerPrefs.GetString("ChildName");
         string childBirthday = PlayerPrefs.GetString("ChildBirthday");
         string childGender = PlayerPrefs.GetString("ChildGender");
-        string childPIN = PlayerPrefs.GetString("ChildPIN");
+        string childPIN = PlayerPrefs.GetString("PIN");
         string childAvatar = PlayerPrefs.GetString("ChildAvatar");
         string partner = PlayerPrefs.GetString("Partner");
 

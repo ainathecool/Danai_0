@@ -13,6 +13,7 @@ public class GuardianLogin : MonoBehaviour
 {
     public TextMeshProUGUI EmailInput;
     public TextMeshProUGUI PasswordInput;
+    public TextMeshProUGUI LoginError;
 
     private FirebaseAuth auth;
 
@@ -48,6 +49,7 @@ public class GuardianLogin : MonoBehaviour
         {
             // Handle login failure and show an error message.
             Debug.LogError("Login failed: " + e.Message);
+            LoginError.text = e.Message + " Try Again!";
         }
     }
 

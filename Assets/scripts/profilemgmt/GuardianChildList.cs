@@ -1,3 +1,4 @@
+
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +13,10 @@ using Firebase.Database;
 public class GuardianChildList : MonoBehaviour
 {
     public TextMeshProUGUI GuardianNameText;
-    public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
-    public GameObject ChildProfileRowPrefab; // Prefab for child profile rows.
+    public TextMeshProUGUI ChildName;
+    public Image Avatar;
+    //public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
+    //public GameObject ChildProfileRowPrefab; // Prefab for child profile rows.
 
     private DatabaseReference databaseReference;
 
@@ -21,6 +24,9 @@ public class GuardianChildList : MonoBehaviour
     {
         // Initialize the Firebase Realtime Database reference.
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        ChildName.text = null;
+        Avatar.sprite = null;
+
 
         // Fetch and display the guardian's name.
         FetchAndDisplayGuardianName();
@@ -34,7 +40,7 @@ public class GuardianChildList : MonoBehaviour
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
         DataSnapshot dataSnapshot = await databaseReference.Child("guardians").Child(userId).Child("name").GetValueAsync();
         string guardianName = (string)dataSnapshot.Value;
-        GuardianNameText.text = "Guardian: " + guardianName;
+        GuardianNameText.text = "Hello " + guardianName;
     }
 
     private async void FetchAndDisplayChildProfiles()
@@ -48,13 +54,20 @@ public class GuardianChildList : MonoBehaviour
             foreach (var childSnapshot in dataSnapshot.Children)
             {
                 // Instantiate a child profile row from the prefab.
-                GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
+              //  GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
 
                 // Set the child's name on the row.
-                string childName = (string)childSnapshot.Child("name").Value;
-                childProfileRow.GetComponentInChildren<TextMeshProUGUI>().text = childName;
+                string childName = (string)childSnapshot.Child("Name").Value;
+                ChildName.text = childName;
+               // childProfileRow.GetComponentInChildren<TextMeshProUGUI>().text = childName;
 
-                // You can add more UI elements (e.g., avatar images) here.
+                // Fetch the avatar name from the database.
+                string avatarName = (string)childSnapshot.Child("Avatar").Value;
+
+                // Load the corresponding sprite from Resources/Avatars/.
+                Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
+                Avatar.sprite = avatarSprite;
+              
             }
         }
         else
@@ -64,8 +77,10 @@ public class GuardianChildList : MonoBehaviour
         }
     }
 
+
     public void GoToAddChildInfoScene()
     {
         SceneManager.LoadScene("AddChildProfiles"); // Replace with your actual scene name.
     }
 }
+

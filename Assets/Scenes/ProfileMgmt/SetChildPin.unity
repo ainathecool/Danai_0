@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24795854}
   - component: {fileID: 24795853}
+  - component: {fileID: 24795855}
   m_Layer: 0
   m_Name: Background (1)
   m_TagString: Untagged
@@ -199,15 +200,45 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24795852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.11, y: 5.14, z: 0}
-  m_LocalScale: {x: 0.28465262, y: 0.30889425, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.9131, y: 5.0721, z: 0}
+  m_LocalScale: {x: 0.21800539, y: 0.27956203, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1212959297}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &24795855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24795852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &39617531
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +251,7 @@ GameObject:
   - component: {fileID: 39617536}
   - component: {fileID: 39617535}
   - component: {fileID: 39617534}
+  - component: {fileID: 39617537}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -292,7 +324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 39617537}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -342,6 +374,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39617531}
   m_CullTransparentMesh: 1
+--- !u!114 &39617537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39617531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &146634360
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +471,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188971981
 GameObject:
@@ -445,8 +508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1285.1973, y: 1892.9999}
-  m_SizeDelta: {x: 362.2, y: 321.4}
+  m_AnchoredPosition: {x: -86.99, y: 149.78}
+  m_SizeDelta: {x: 21.8, y: 20.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188971983
 MonoBehaviour:
@@ -498,6 +561,7 @@ GameObject:
   - component: {fileID: 233668232}
   - component: {fileID: 233668231}
   - component: {fileID: 233668230}
+  - component: {fileID: 233668233}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -570,7 +634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 233668233}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -620,6 +684,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233668227}
   m_CullTransparentMesh: 1
+--- !u!114 &233668233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233668227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &241204433
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +727,7 @@ GameObject:
   - component: {fileID: 241204438}
   - component: {fileID: 241204437}
   - component: {fileID: 241204436}
+  - component: {fileID: 241204439}
   m_Layer: 5
   m_Name: 9
   m_TagString: Untagged
@@ -704,7 +800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 241204439}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -754,6 +850,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241204433}
   m_CullTransparentMesh: 1
+--- !u!114 &241204439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241204433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &323970470
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +1028,7 @@ GameObject:
   - component: {fileID: 375420795}
   - component: {fileID: 375420794}
   - component: {fileID: 375420793}
+  - component: {fileID: 375420796}
   m_Layer: 5
   m_Name: 11
   m_TagString: Untagged
@@ -973,7 +1101,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 375420796}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -1023,6 +1151,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375420790}
   m_CullTransparentMesh: 1
+--- !u!114 &375420796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375420790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &421662867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,8 +1352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1003.5026, y: 1881.4}
-  m_SizeDelta: {x: 362.2, y: 321.4}
+  m_AnchoredPosition: {x: 50.72, y: 149.02}
+  m_SizeDelta: {x: 21.8, y: 20.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450692864
 MonoBehaviour:
@@ -1381,6 +1540,7 @@ GameObject:
   - component: {fileID: 516163055}
   - component: {fileID: 516163054}
   - component: {fileID: 516163053}
+  - component: {fileID: 516163056}
   m_Layer: 5
   m_Name: 7
   m_TagString: Untagged
@@ -1453,7 +1613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 516163056}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -1503,6 +1663,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516163050}
   m_CullTransparentMesh: 1
+--- !u!114 &516163056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516163050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &532534168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,8 +1732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91, y: -2315}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 1.97, y: -142.34}
+  m_SizeDelta: {x: 10, y: 2.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532534170
 MonoBehaviour:
@@ -1668,6 +1859,7 @@ MonoBehaviour:
   - {fileID: 1492296497}
   - {fileID: 375420793}
   - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &553176970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +2142,7 @@ GameObject:
   - component: {fileID: 583899807}
   - component: {fileID: 583899806}
   - component: {fileID: 583899805}
+  - component: {fileID: 583899808}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -2022,7 +2215,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 583899808}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -2072,6 +2265,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583899802}
   m_CullTransparentMesh: 1
+--- !u!114 &583899808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583899802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &772337262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2443,7 @@ GameObject:
   - component: {fileID: 780196623}
   - component: {fileID: 780196622}
   - component: {fileID: 780196621}
+  - component: {fileID: 780196624}
   m_Layer: 5
   m_Name: 12
   m_TagString: Untagged
@@ -2291,7 +2516,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 780196624}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -2341,6 +2566,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780196618}
   m_CullTransparentMesh: 1
+--- !u!114 &780196624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780196618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &820292905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2609,7 @@ GameObject:
   - component: {fileID: 820292910}
   - component: {fileID: 820292909}
   - component: {fileID: 820292908}
+  - component: {fileID: 820292911}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -2424,7 +2681,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 820292909}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 820292911}
+        m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
+        m_MethodName: OnPinPadClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &820292909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2732,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820292905}
   m_CullTransparentMesh: 1
+--- !u!114 &820292911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820292905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &829290852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,8 +2933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1248, y: 3039}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 21, y: 207}
+  m_SizeDelta: {x: 250.52, y: 31.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922639060
 MonoBehaviour:
@@ -2683,8 +2983,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2719,7 +3019,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -2386.5508, w: -395.37134}
+  m_margin: {x: 0, y: 0, z: -0.5575986, w: -3.708309}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2893,8 +3193,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011890501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27, y: -190, z: -23040}
-  m_LocalScale: {x: 1187.1313, y: 1659.1826, z: 256}
+  m_LocalPosition: {x: 1.44, y: 1.54, z: -23040}
+  m_LocalScale: {x: 69.715675, y: 114.01841, z: 256}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1678791995}
@@ -2965,6 +3265,7 @@ GameObject:
   - component: {fileID: 1061732291}
   - component: {fileID: 1061732290}
   - component: {fileID: 1061732289}
+  - component: {fileID: 1061732292}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -3037,7 +3338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1061732292}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -3087,6 +3388,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061732286}
   m_CullTransparentMesh: 1
+--- !u!114 &1061732292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061732286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &1065824711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,8 +3504,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 2.5
+  m_fontSizeBase: 2.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3261,8 +3593,9 @@ RectTransform:
   - {fileID: 1011890502}
   - {fileID: 532534169}
   - {fileID: 1907150379}
-  m_Father: {fileID: 24795854}
-  m_RootOrder: 0
+  - {fileID: 1401232899}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3298,12 +3631,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3465,6 +3798,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223304322}
   m_CullTransparentMesh: 1
+--- !u!1 &1401232898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401232899}
+  - component: {fileID: 1401232901}
+  - component: {fileID: 1401232900}
+  m_Layer: 5
+  m_Name: PinError
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1401232899
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401232898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1212959297}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 10.76, y: -183}
+  m_SizeDelta: {x: 250.52, y: 31.87}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1401232900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401232898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 1a6f999ad669c8b4bb1639b73f5a95b5, type: 2}
+  m_sharedMaterial: {fileID: -2144486605990830091, guid: 1a6f999ad669c8b4bb1639b73f5a95b5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279506419
+  m_fontColor: {r: 0.95294124, g: 0.08235294, b: 0.078431375, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 15
+  m_fontSizeBase: 15
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -0.5575986, w: -3.708309}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1401232901
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401232898}
+  m_CullTransparentMesh: 1
 --- !u!1 &1417877414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,6 +3945,7 @@ GameObject:
   - component: {fileID: 1417877419}
   - component: {fileID: 1417877418}
   - component: {fileID: 1417877417}
+  - component: {fileID: 1417877420}
   m_Layer: 5
   m_Name: 6
   m_TagString: Untagged
@@ -3549,7 +4018,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1417877420}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -3599,6 +4068,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417877414}
   m_CullTransparentMesh: 1
+--- !u!114 &1417877420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417877414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &1436913943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3904,8 +4404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: 1893}
-  m_SizeDelta: {x: 362.2, y: 321.4}
+  m_AnchoredPosition: {x: 5.55, y: 149.78}
+  m_SizeDelta: {x: 21.8, y: 20.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465448320
 MonoBehaviour:
@@ -3957,6 +4457,7 @@ GameObject:
   - component: {fileID: 1492296499}
   - component: {fileID: 1492296498}
   - component: {fileID: 1492296497}
+  - component: {fileID: 1492296500}
   m_Layer: 5
   m_Name: 10
   m_TagString: Untagged
@@ -4029,7 +4530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1492296500}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -4079,6 +4580,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492296494}
   m_CullTransparentMesh: 1
+--- !u!114 &1492296500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492296494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &1506276555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4647,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4213,8 +4745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.06, y: 0}
-  m_SizeDelta: {x: 379.0511, y: 198.2167}
+  m_AnchoredPosition: {x: 0.0115, y: 0}
+  m_SizeDelta: {x: 367.5478, y: 198.2167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678791997
 MonoBehaviour:
@@ -4317,7 +4849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678791994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
   m_Name: 
@@ -4340,6 +4872,7 @@ MonoBehaviour:
   - {fileID: 1492296497}
   - {fileID: 375420793}
   - {fileID: 780196621}
+  pinError: {fileID: 0}
 --- !u!1 &1729106444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,6 +5020,7 @@ GameObject:
   - component: {fileID: 1781211494}
   - component: {fileID: 1781211493}
   - component: {fileID: 1781211492}
+  - component: {fileID: 1781211495}
   m_Layer: 5
   m_Name: 8
   m_TagString: Untagged
@@ -4559,7 +5093,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1781211495}
         m_TargetAssemblyTypeName: SetChildPin, Assembly-CSharp
         m_MethodName: OnPinPadClicked
         m_Mode: 3
@@ -4609,6 +5143,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781211489}
   m_CullTransparentMesh: 1
+--- !u!114 &1781211495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781211489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e72adad13b3604fa8908e354f91026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinCircles:
+  - {fileID: 188971983}
+  - {fileID: 1794116211}
+  - {fileID: 1465448320}
+  - {fileID: 450692864}
+  pinPad:
+  - {fileID: 820292908}
+  - {fileID: 1061732289}
+  - {fileID: 233668230}
+  - {fileID: 583899805}
+  - {fileID: 39617534}
+  - {fileID: 1417877417}
+  - {fileID: 516163053}
+  - {fileID: 1781211492}
+  - {fileID: 241204436}
+  - {fileID: 1492296497}
+  - {fileID: 375420793}
+  - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &1794116209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,7 +5199,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794116209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4644,8 +5209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -510.1974, y: 1892.9999}
-  m_SizeDelta: {x: 362.2, y: 321.4}
+  m_AnchoredPosition: {x: -40.37, y: 149.78}
+  m_SizeDelta: {x: 21.8, y: 20.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794116211
 MonoBehaviour:
@@ -4847,9 +5412,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907150378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 9.999999, y: 9.999999, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2099969091}
@@ -4858,8 +5423,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1604, y: 1882}
-  m_SizeDelta: {x: 39.5, y: 36.86}
+  m_AnchoredPosition: {x: 94.5, y: 153.4}
+  m_SizeDelta: {x: 3.65, y: 3.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907150380
 MonoBehaviour:
@@ -4937,7 +5502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15e91df8e2fc74a489862940a3ae24f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc78787a9e31adb499df03566504d679, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4985,6 +5550,7 @@ MonoBehaviour:
   - {fileID: 1492296497}
   - {fileID: 375420793}
   - {fileID: 780196621}
+  pinError: {fileID: 1401232900}
 --- !u!1 &2099969090
 GameObject:
   m_ObjectHideFlags: 0
