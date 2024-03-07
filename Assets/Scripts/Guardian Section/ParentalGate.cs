@@ -14,6 +14,7 @@ public class ParentalGate : MonoBehaviour
 {
     public TextMeshProUGUI questionText;
     public TMP_InputField answerInput;
+    public TextMeshProUGUI tryAgain;
     public Button submitButton;
 
     private DatabaseReference databaseReference;
@@ -96,7 +97,7 @@ public class ParentalGate : MonoBehaviour
         else
         {
             Debug.Log("Access Denied");
-            questionText.text = "Try Again"; // Display "Try Again"
+            tryAgain.text = "Try Again"; // Display "Try Again"
             answerInput.text = ""; // Clear user input
             FetchRandomQuestion(); // Fetch another question
         }
