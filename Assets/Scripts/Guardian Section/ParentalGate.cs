@@ -8,63 +8,80 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
+using System.Collections.Generic;
 
 public class ParentalGate : MonoBehaviour
 {
     public TextMeshProUGUI questionText;
     public TMP_InputField answerInput;
+    public Button submitButton;
 
     private DatabaseReference databaseReference;
-    private string currentQuestionKey;
 
     private void Start()
     {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
-        {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == DependencyStatus.Available)
-            {
-                databaseReference = FirebaseDatabase.DefaultInstance.RootReference.Child("parentalGate");
-                FetchRandomQuestion();
-            }
-            else
-            {
-                Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
-            }
-        });
+
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        Debug.Log("Firebase initialized successfully");
+        FetchRandomQuestion();
+
+        submitButton.onClick.AddListener(ValidateAnswer);
+
     }
 
-    private void FetchRandomQuestion()
+    private async void FetchRandomQuestion()
     {
-        databaseReference.GetValueAsync().ContinueWith(task =>
+        DatabaseReference parentalGateStuff = databaseReference.Child("parentalGate");
+        DataSnapshot stuffSnapshot = await parentalGateStuff.GetValueAsync();
+
+        if (stuffSnapshot.Exists)
         {
-            if (task.IsCompleted)
+            List<string> questionKeys = new List<string>();
+            foreach (var childSnapshot in stuffSnapshot.Children)
             {
-                DataSnapshot snapshot = task.Result;
-                int randomIndex = UnityEngine.Random.Range(0, (int)snapshot.ChildrenCount);
-
-                foreach (DataSnapshot childSnapshot in snapshot.Children)
-                {
-                    if (randomIndex == 0)
-                    {
-                        string question = childSnapshot.Child("Question").GetValue(true).ToString();
-                        string answer = childSnapshot.Child("Answer").GetValue(true).ToString();
-
-                        currentQuestionKey = childSnapshot.Key;
-                        DisplayQuestion(question, answer);
-                        break;
-                    }
-                    randomIndex--;
-                }
+                questionKeys.Add(childSnapshot.Key);
             }
-        });
+
+            // Selecting random
+            string randomKey = questionKeys[UnityEngine.Random.Range(0, questionKeys.Count)];
+            Debug.Log("random selectedy");
+
+            // Get random data
+            DataSnapshot randomStuffSnapshot = await parentalGateStuff.Child(randomKey).GetValueAsync();
+
+            if (randomStuffSnapshot.Exists)
+            {
+                string question = randomStuffSnapshot.Child("Question").GetValue(true).ToString();
+                Debug.Log("q" + question);
+                string answer = randomStuffSnapshot.Child("Answer").GetValue(true).ToString();
+                Debug.Log("a" + answer);
+                DisplayQuestion(question, answer);
+            }
+        }
     }
 
     private void DisplayQuestion(string question, string answer)
     {
         questionText.text = question;
-        answerInput.placeholder.GetComponent<TextMeshProUGUI>().text = answer;
+        answerInput.placeholder.GetComponent<TextMeshProUGUI>().text = "";
     }
+
+    /* public void ValidateAnswer()
+     {
+         string parentResponse = answerInput.text;
+         string correctAnswer = answerInput.placeholder.GetComponent<TextMeshProUGUI>().text;
+
+         if (parentResponse.Trim().Equals(correctAnswer.Trim(), StringComparison.OrdinalIgnoreCase))
+         {
+             Debug.Log("Access Granted");
+             // Perform actions for accessing content (e.g., load next scene)
+         }
+         else
+         {
+             Debug.Log("Access Denied");
+             FetchRandomQuestion();
+         }
+     }*/
 
     public void ValidateAnswer()
     {
@@ -79,7 +96,9 @@ public class ParentalGate : MonoBehaviour
         else
         {
             Debug.Log("Access Denied");
-            FetchRandomQuestion();
+            questionText.text = "Try Again"; // Display "Try Again"
+            answerInput.text = ""; // Clear user input
+            FetchRandomQuestion(); // Fetch another question
         }
     }
 }
