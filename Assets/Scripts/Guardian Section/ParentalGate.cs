@@ -92,7 +92,7 @@ public class ParentalGate : MonoBehaviour
         if (parentResponse.Trim().Equals(correctAnswer.Trim(), StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Access Granted");
-            // Perform actions for accessing content (e.g., load next scene)
+            SceneManager.LoadScene("childProfiles");
         }
         else
         {
