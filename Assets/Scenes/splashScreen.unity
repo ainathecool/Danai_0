@@ -557,5 +557,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginSceneName: GuardianLogin
-  childProfilesSceneName: ChildProfiles
-  delayBeforeLoad: 5
+  childProfilesSceneName: childHome
+  delayBeforeLoad: 3
