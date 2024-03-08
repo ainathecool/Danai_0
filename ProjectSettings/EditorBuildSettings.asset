@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/dScene2.unity
     guid: 7006996fcab9b5a4ba4e982b6c8ff298
   - enabled: 1
-    path: Assets/Scenes/DyslexiaInPakistanScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScenes/DyslexiaInPakistanScene.unity
     guid: 17a60d1b02d4f8145a56f40426e19958
   - enabled: 1
     path: Assets/Scenes/Games/Phase 2/eScene2.unity
@@ -57,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/eScene1.unity
     guid: b81702f6b009bd9439d89a1b50edabff
   - enabled: 1
-    path: Assets/Scenes/FactsAboutDyslexiaScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScenes/FactsAboutDyslexiaScene.unity
     guid: e6fdb193c9d26204ea9aca293e913138
   - enabled: 1
     path: Assets/Scenes/FirebaseManager.unity
@@ -90,7 +90,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/gScene2.unity
     guid: bb49b0a9b910e91498eefdb925dea57a
   - enabled: 1
-    path: Assets/Scenes/MoreOptionsSceneunity.unity
+    path: Assets/Scenes/GuardianSection Scenes/MoreOptionsSceneunity.unity
     guid: 56671af83c9417c4691fc0662ed4bb43
   - enabled: 1
     path: Assets/Scenes/Games/Phase 2/mScene2.unity
@@ -150,7 +150,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/nScene1.unity
     guid: 5bd524ae4afa6d24aa142c9d0a9f2abd
   - enabled: 1
-    path: Assets/Scenes/LifeOfADyslexicScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScenes/LifeOfADyslexicScene.unity
     guid: 2729d711e7caa1942a04abe4a53d66f5
   - enabled: 1
     path: Assets/Scenes/Games/Phase 2/rScene2.unity
@@ -321,16 +321,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/wScene1.unity
     guid: 990f575bf3a346145b3445dd1fc61ce8
   - enabled: 1
-    path: Assets/Scenes/WordToSpreadScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScene.unity
     guid: d7b9f09ee0f58b94f848cd3e0c969b02
   - enabled: 1
     path: Assets/Scenes/Games/Phase 1/a/VR_a1.unity
     guid: 85ceddc0b53bb534f893747d7a7b1580
   - enabled: 1
-    path: Assets/Scenes/WhatDyslexiaIsNotScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScenes/WhatDyslexiaIsNotScene.unity
     guid: 88b5a6f5cbaa3d9418b1b72d7bf4100b
   - enabled: 1
-    path: Assets/Scenes/WhatDyslexiaIsScene.unity
+    path: Assets/Scenes/GuardianSection Scenes/WordToSpreadScenes/WhatDyslexiaIsScene.unity
     guid: 9a4e6ae559e902245827ac248aa535fc
   - enabled: 1
     path: Assets/Scenes/Games/Phase 1/T/t_complete.unity
