@@ -67,22 +67,7 @@ public class ParentalGate : MonoBehaviour
         answerInput.placeholder.GetComponent<TextMeshProUGUI>().text = "";
     }
 
-    /* public void ValidateAnswer()
-     {
-         string parentResponse = answerInput.text;
-         string correctAnswer = answerInput.placeholder.GetComponent<TextMeshProUGUI>().text;
 
-         if (parentResponse.Trim().Equals(correctAnswer.Trim(), StringComparison.OrdinalIgnoreCase))
-         {
-             Debug.Log("Access Granted");
-             // Perform actions for accessing content (e.g., load next scene)
-         }
-         else
-         {
-             Debug.Log("Access Denied");
-             FetchRandomQuestion();
-         }
-     }*/
 
     public void ValidateAnswer()
     {
