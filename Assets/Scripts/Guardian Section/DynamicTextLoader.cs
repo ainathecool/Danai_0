@@ -17,9 +17,9 @@ public class DynamicTextLoader : MonoBehaviour
         headingFromFirebase = "Hello this is Maaidah from FAST";
 
 
-            textMeshPro.text = textFromFirebase;
+          //  textMeshPro.text = textFromFirebase;
         //textMeshPro.overflowMode = TextOverflowModes.Truncate; // or TextOverflowModes.Ellipsis
-        heading.text = headingFromFirebase;
+       // heading.text = headingFromFirebase;
 
         // Adjust the size of the TextMeshPro object
         //textMeshPro.autoSizeTextContainer = true; // Automatically adjusts the size of the text container
