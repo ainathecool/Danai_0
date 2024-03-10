@@ -23,6 +23,7 @@ public class LifeofaDys : MonoBehaviour
 
         // Hide the buttons container initially
         buttonsContainer.SetActive(true);
+        otherButton.SetActive(false);
     }
 
     public async void FetchDataFromFirebaseAndLoadScene()

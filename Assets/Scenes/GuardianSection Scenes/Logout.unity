@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 864412773}
   - component: {fileID: 864412772}
   - component: {fileID: 864412771}
+  - component: {fileID: 864412774}
   m_Layer: 5
   m_Name: Cancel
   m_TagString: Untagged
@@ -552,7 +553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 864412772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 864412774}
+        m_TargetAssemblyTypeName: SkipButtonHandler, Assembly-CSharp
+        m_MethodName: OnSkipButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &864412772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +604,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864412768}
   m_CullTransparentMesh: 1
+--- !u!114 &864412774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864412768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655c45498522e6741ad809f8f389b1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: MoreOptionsForGuardian
 --- !u!1 &1093368305
 GameObject:
   m_ObjectHideFlags: 0

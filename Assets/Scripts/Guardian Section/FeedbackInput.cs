@@ -1,57 +1,81 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+/*using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class FeedbackInput : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TMP_InputField inputField;
+    public float minHeight = 30f;
+
+    RectTransform rectTransform;
+
     void Start()
     {
-        
+        rectTransform = inputField.GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        TMP_Text textComponent = inputField.textComponent;
+        float preferredHeight = LayoutUtility.GetPreferredHeight(textComponent.rectTransform) + 10f; // Adding some padding
+
+        // Ensure minimum height
+        preferredHeight = Mathf.Max(preferredHeight, minHeight);
+
+        // Keep the width constant
+        float currentWidth = rectTransform.rect.width;
+        rectTransform.sizeDelta = new Vector2(currentWidth, preferredHeight);
     }
-}
-*/
+}*/
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FeedbackInput : MonoBehaviour
 {
-    public TMP_Text textMeshProText;
+    public TMP_InputField inputField;
+    public ScrollRect scrollView;
+    public float minHeight = 30f;
+
+    RectTransform rectTransform;
+    RectTransform contentRectTransform;
 
     void Start()
     {
-        // Set text to be editable
-        textMeshProText.richText = true;
+        rectTransform = inputField.GetComponent<RectTransform>();
+        contentRectTransform = scrollView.content.GetComponent<RectTransform>();
     }
+
     void Update()
     {
-        // Check for keyboard input
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            // Set text to editable
-            //textMeshProText.isInputAllowed = true;
+        TMP_Text textComponent = inputField.textComponent;
+        float preferredHeight = LayoutUtility.GetPreferredHeight(textComponent.rectTransform) + 10f; // Adding some padding
 
-            // Place focus on the text field
-           // textMeshProText.Select();
+        // Ensure minimum height
+        preferredHeight = Mathf.Max(preferredHeight, minHeight);
+
+        // Keep the width constant
+        float currentWidth = rectTransform.rect.width;
+        rectTransform.sizeDelta = new Vector2(currentWidth, preferredHeight);
+
+        // Check if the input field's height exceeds the available space in the Scroll View
+        if (preferredHeight > contentRectTransform.rect.height)
+        {
+            // Enable vertical scrolling
+            scrollView.vertical = true;
+
+            // Enable masking
+            scrollView.viewport.GetComponent<Mask>().enabled = true;
+        }
+        else
+        {
+            // Disable vertical scrolling
+            scrollView.vertical = false;
+
+            // Disable masking
+            scrollView.viewport.GetComponent<Mask>().enabled = false;
         }
     }
-    /*void Update()
-    {
-        // Check for input and update text accordingly
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Debug.Log("Input Text: " + textMeshProText.text);
-            // You can process or store the input text here
-
-            // Clear input text
-            textMeshProText.text = "";
-        }
-    }*/
 }
+

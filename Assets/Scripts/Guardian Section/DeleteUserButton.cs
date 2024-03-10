@@ -5,8 +5,10 @@ using TMPro;
 
 public class DeleteUserButton : MonoBehaviour
 {
-    public TextMeshProUGUI popupText;
-    public Button backButton;
+
+    public GameObject panelToUnhide;
+    public Button anotherButtonToHide;
+    public TextMeshProUGUI textMeshProObjectToHide;
 
     public void DeleteUserOnClick()
     {
@@ -15,7 +17,18 @@ public class DeleteUserButton : MonoBehaviour
 
         // Get the current user
         FirebaseUser user = auth.CurrentUser;
+        // Show the pop-up pannel
+        // Unhide the panel
+        panelToUnhide.SetActive(true);
 
+        // Hide the clicked button
+        gameObject.SetActive(false);
+
+        // Hide the other button
+        anotherButtonToHide.gameObject.SetActive(false);
+
+        // Hide the TextMeshPro object
+        textMeshProObjectToHide.gameObject.SetActive(false);
         if (user != null)
         {
             // Delete the user
@@ -34,8 +47,7 @@ public class DeleteUserButton : MonoBehaviour
 
                 Debug.Log("User deleted successfully.");
 
-                // Show the pop-up message
-                ShowPopup("Account deleted successfully!");
+                
             });
         }
         else
@@ -44,17 +56,4 @@ public class DeleteUserButton : MonoBehaviour
         }
     }
 
-    void ShowPopup(string message)
-    {
-        popupText.text = message;
-        backButton.gameObject.SetActive(true); // Activate the back button
-        // You can also activate a GameObject containing a pop-up UI element here.
-    }
-
-    public void BackButtonOnClick()
-    {
-        // Here you can implement the functionality to go back to the home screen.
-        // For example, you can load a new scene or disable the pop-up UI element.
-        Debug.Log("Back button clicked!");
-    }
 }
