@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 533972492}
   pickUpClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
-  dropClip: {fileID: 8300000, guid: 20c8ad2bd2ffa4e419efe74bb8d65f51, type: 3}
+  dropClip: {fileID: 8300000, guid: 286bd5cdb8b1c4d48b39ff21a3d9e8ac, type: 3}
   draggedbody: {fileID: 533972488}
   hintslot: {fileID: 2060778401}
 --- !u!58 &533972491
