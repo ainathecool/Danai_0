@@ -1342,6 +1342,7 @@ MonoBehaviour:
   a2: {fileID: 1529693476}
   moveAreaA1: {fileID: 1464304970}
   moveAreaA2: {fileID: 352024644}
+  nextSceneName: VR_a1
 --- !u!61 &631819525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2215,6 +2216,7 @@ MonoBehaviour:
   a2: {fileID: 1529693476}
   moveAreaA1: {fileID: 1464304970}
   moveAreaA2: {fileID: 352024644}
+  nextSceneName: VR_a1
 --- !u!61 &1529693478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3359,6 +3361,7 @@ MonoBehaviour:
   a2: {fileID: 1529693476}
   moveAreaA1: {fileID: 1464304970}
   moveAreaA2: {fileID: 352024644}
+  nextSceneName: 
 --- !u!82 &2144430388
 AudioSource:
   m_ObjectHideFlags: 0

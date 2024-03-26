@@ -2209,6 +2209,9 @@ MonoBehaviour:
   s2Sound: {fileID: 8300000, guid: f611f4f4641982b46b18004996a6f544, type: 3}
   progressBar: {fileID: 484623086}
   snake: {fileID: 201748694}
+  s1Button: {fileID: 1808389472}
+  s2Button: {fileID: 1545795332}
+  nextSceneName: VR_s1
 --- !u!1 &767428234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,7 +3740,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.9625206
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4042,6 +4045,9 @@ MonoBehaviour:
   s2Sound: {fileID: 8300000, guid: f611f4f4641982b46b18004996a6f544, type: 3}
   progressBar: {fileID: 484623086}
   snake: {fileID: 201748694}
+  s1Button: {fileID: 714937589}
+  s2Button: {fileID: 1808389472}
+  nextSceneName: VR_s1
 --- !u!1 &1581083935
 GameObject:
   m_ObjectHideFlags: 0
@@ -4776,6 +4782,9 @@ MonoBehaviour:
   s2Sound: {fileID: 8300000, guid: f611f4f4641982b46b18004996a6f544, type: 3}
   progressBar: {fileID: 484623086}
   snake: {fileID: 201748694}
+  s1Button: {fileID: 714937589}
+  s2Button: {fileID: 1545795332}
+  nextSceneName: VR_s1
 --- !u!1 &1862908474
 GameObject:
   m_ObjectHideFlags: 0

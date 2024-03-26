@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SButtonClickHandler : MonoBehaviour
 {
     public AudioClip s2Sound;
     public GameObject progressBar;
     public GameObject snake;
+    public GameObject s1Button, s2Button; //for checking if the other two buttons are on progress bar or where, so we can move to the next scene
+    public string nextSceneName;
 
     private AudioSource audioSource;
 
@@ -23,6 +26,7 @@ public class SButtonClickHandler : MonoBehaviour
         { 
             // Spiral animation and grow
             StartCoroutine(SpiralAnimation());
+            
         }
         StartCoroutine(SnakeAnimation());
 
@@ -100,5 +104,17 @@ public class SButtonClickHandler : MonoBehaviour
 
         // Ensure that the snake reaches the original position precisely
         snake.transform.position = originalSnakePosition;
+        if (s1Button.transform.position == progressBar.transform.position && s2Button.transform.position == progressBar.transform.position)
+        {
+            StartCoroutine(LoadSceneAfterDelay());
+        }
+    }
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(3f);
+
+        // Load the next scene
+        SceneManager.LoadScene(nextSceneName);
     }
 }

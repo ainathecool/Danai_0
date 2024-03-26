@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class AButtonHandler : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class AButtonHandler : MonoBehaviour
     public GameObject progressBar;
     public GameObject a1, a2;
     public Transform moveAreaA1, moveAreaA2; // Reference to the empty object
+    public string nextSceneName;
 
     private AudioSource audioSource;
     private bool isAnimating = false;
@@ -164,6 +167,18 @@ public class AButtonHandler : MonoBehaviour
 
         // Go back to the original size
         transform.localScale = originalScale;
+        if (a1.transform.position == progressBar.transform.position && a2.transform.position == progressBar.transform.position)
+        {
+            StartCoroutine(LoadSceneAfterDelay());
+        }
+    }
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(3f);
+
+        // Load the next scene
+        SceneManager.LoadScene(nextSceneName);
     }
 
     private IEnumerator JigglingA1()

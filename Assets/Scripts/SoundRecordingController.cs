@@ -12,7 +12,7 @@ public class SoundRecordingController : MonoBehaviour
     public AudioClip referenceAudio, tryAgain, congrats;
 
     // The maximum recording duration in seconds
-    private float maxRecordingDuration = 3f;
+    private float maxRecordingDuration = 1f;
 
     // Flag to indicate whether recording is in progress
     private bool isRecording = false;

@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeakingButton: {fileID: 917701122}
   sceneInputField: VR_a3
-  threshold: 0
+  threshold: 0.1
   referenceAudio: {fileID: 8300000, guid: 1278ff7c49c598f4e9c10f2fc9f2cb2f, type: 3}
   tryAgain: {fileID: 8300000, guid: e57c8cd9d56ad26439764e8cbaded27b, type: 3}
   congrats: {fileID: 8300000, guid: c42a812b3d3554748adadb6632d1685a, type: 3}
