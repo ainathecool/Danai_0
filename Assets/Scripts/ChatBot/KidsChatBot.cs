@@ -281,7 +281,7 @@ public class KidsChatBot : MonoBehaviour
         while (isRecording && !isRecordingStopped)
         {
             float lerpValue = Mathf.PingPong(Time.time, 1f);
-            startSpeakingButton.image.color = Color.Lerp(originalButtonColor, Color.red, lerpValue);
+            startSpeakingButton.image.color = Color.Lerp(originalButtonColor, Color.white, lerpValue);
             yield return null;
         }
 
