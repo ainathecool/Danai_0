@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TButtonHandler : MonoBehaviour
@@ -10,6 +11,7 @@ public class TButtonHandler : MonoBehaviour
     public AudioClip hintTSound;
     public GameObject progressBar;
     public GameObject t1, t2, tennisRacket;
+    public string nextSceneName;
 
 
     private AudioSource audioSource;
@@ -86,11 +88,7 @@ public class TButtonHandler : MonoBehaviour
                 originalPosition = t2.transform.position;
                 StartCoroutine(AnimationT2());
             }
-            else
-            {
-                PlayerPrefs.SetInt("complete", 1);
-                PlayerPrefs.Save();
-            }
+
 
         }
     }
@@ -202,6 +200,20 @@ public class TButtonHandler : MonoBehaviour
 
         // Go back to the original size
         target.transform.localScale = originalScale;
+
+        if(t1.transform.position == progressBar.transform.position && t2.transform.position == progressBar.transform.position)
+        {
+            StartCoroutine(LoadSceneAfterDelay());
+        }
+    }
+
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(3f);
+
+        // Load the next scene
+        SceneManager.LoadScene(nextSceneName);
     }
 
 
