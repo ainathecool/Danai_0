@@ -12,6 +12,7 @@ public class TraceImage : MonoBehaviour
 
     public float minArea, maxArea;
     public string nextSceneName;
+    private int incorrectCount; // to keep track k kitna galat kiya, sahi karnay sa pehlay. this will then be used in mirt
 
     public PolygonCollider2D outlinedCollider;
     private void Update()
@@ -30,6 +31,8 @@ public class TraceImage : MonoBehaviour
         {
             DrawLine();
         }
+
+        incorrectCount = PlayerPrefs.GetInt("Phase2IncorrectCount");
     }
 
     private void StartDrawing()
@@ -96,6 +99,12 @@ public class TraceImage : MonoBehaviour
             // Proceed to the next scene if the shape is accurate and complete within the tolerance
             Debug.Log("Shape verified. Proceeding to next scene.");
             Debug.Log("drawn area: " + drawnArea );
+
+            //adding this bool value to stop time measuring for imp tracking 
+            string timeEnd = "1";
+            PlayerPrefs.SetString("EndTime", timeEnd);
+
+            
             // Add code here to load the next scene
             SceneManager.LoadScene(nextSceneName);
         }
@@ -103,6 +112,8 @@ public class TraceImage : MonoBehaviour
         {
             // Inform the user that the shape is not accurate or complete
             Debug.Log("Shape is not accurate or complete. Please try again.");
+            PlayerPrefs.SetInt("Phase2IncorrectCount", incorrectCount + 1); //adding count for incorrect, will be used to track improvement
+            Debug.Log("incorrect: " + PlayerPrefs.GetInt("Phase2IncorrectCount"));
             Debug.Log("drawn area: " + drawnArea);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

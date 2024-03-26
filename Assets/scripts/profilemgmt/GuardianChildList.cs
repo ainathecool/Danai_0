@@ -1,13 +1,8 @@
-
-using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Extensions;
 using Firebase.Auth;
-using System.Threading.Tasks;
 using TMPro;
-using UnityEngine.SceneManagement; // Add this using statement for SceneManager.
+using UnityEngine.SceneManagement; 
 using Firebase.Database;
 
 public class GuardianChildList : MonoBehaviour

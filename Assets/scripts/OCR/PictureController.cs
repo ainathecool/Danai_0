@@ -15,8 +15,8 @@ public class PictureController : MonoBehaviour
 
     private void Start()
     {
-        captureButton.onClick.AddListener(CaptureImage);
-        galleryButton.onClick.AddListener(OpenGallery);
+       // captureButton.onClick.AddListener(CaptureImage);
+
     }
 
     public void CaptureImage()
@@ -56,7 +56,7 @@ public class PictureController : MonoBehaviour
     }
 
 
-    public void OpenGallery()
+ /*   public void OpenGallery()
     {
         // Check if the application is running on an Android device
         if (Application.platform == RuntimePlatform.Android)
@@ -92,6 +92,7 @@ public class PictureController : MonoBehaviour
         }
     }
 
+    */
 
     private IEnumerator SendImageForAnalysis(string imageUrl)
     {
