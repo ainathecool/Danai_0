@@ -1,45 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class IncorrectBody : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip pickUpClip, dropClip;
-    private bool dragging;
-    private Vector2 offset, originalPosition;
+    private bool dragging = false;
+    private Vector3 offset;
+    private Vector3 originalPosition;
 
-
-
-
-    void Awake()
+    void Start()
     {
         originalPosition = transform.position;
     }
+
     void Update()
     {
-        if (!dragging) return;
-
-        var mousePosition = GetMousePos();
-
-        transform.position = mousePosition - offset;
+        if (dragging)
+        {
+            Vector3 mousePosition = GetMousePos();
+            transform.position = mousePosition + offset;
+        }
     }
+
     void OnMouseDown()
     {
         dragging = true;
         source.PlayOneShot(pickUpClip);
-        offset = GetMousePos() - (Vector2)transform.position;
+        offset = transform.position - GetMousePos();
     }
 
     void OnMouseUp()
     {
-        transform.position = originalPosition;  //here the grabbed alphabet goes back to its original position 
         dragging = false;
+        transform.position = originalPosition;
         source.PlayOneShot(dropClip);
     }
 
-    Vector2 GetMousePos()
+    Vector3 GetMousePos()
     {
-        return (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }
