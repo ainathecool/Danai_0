@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -7.595, y: 21.185, z: 17.767}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.379974, y: -110.569984}
+  m_AnchoredPosition: {x: 47, y: -114}
   m_SizeDelta: {x: 39.31, y: 150.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &454088245
@@ -1342,7 +1342,7 @@ MonoBehaviour:
   a2: {fileID: 1529693476}
   moveAreaA1: {fileID: 1464304970}
   moveAreaA2: {fileID: 352024644}
-  nextSceneName: VR_a1
+  nextSceneName: a_complete
 --- !u!61 &631819525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2062,7 +2062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043061141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.85, y: 4.84, z: -10}
+  m_LocalPosition: {x: 53.86, y: 4.84, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2170,7 +2170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.695, y: 146.459, z: 60.913}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.750023, y: -9.029987}
+  m_AnchoredPosition: {x: -43, y: 0}
   m_SizeDelta: {x: 42.79, y: 153.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1529693476
@@ -2216,7 +2216,7 @@ MonoBehaviour:
   a2: {fileID: 1529693476}
   moveAreaA1: {fileID: 1464304970}
   moveAreaA2: {fileID: 352024644}
-  nextSceneName: VR_a1
+  nextSceneName: a_complete
 --- !u!61 &1529693478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2451,7 +2451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 71.50997, y: -153.81999}
+  m_AnchoredPosition: {x: 65, y: -160}
   m_SizeDelta: {x: 26.77, y: 30.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1582964948
@@ -2789,7 +2789,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.36, y: 11.04}
+  m_Size: {x: 10.8, y: 16.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2803,8 +2803,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723308774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.83, y: 4.83, z: 0}
-  m_LocalScale: {x: 0.73962826, y: 0.8292991, z: 1}
+  m_LocalPosition: {x: 53.87, y: 4.84, z: 0}
+  m_LocalScale: {x: 0.44555095, y: 0.61776453, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2822,7 +2822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f830b03f17559478fd3d06069d086b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: VR_a1
+  nextSceneName: a_complete
 --- !u!82 &1723308778
 AudioSource:
   m_ObjectHideFlags: 0

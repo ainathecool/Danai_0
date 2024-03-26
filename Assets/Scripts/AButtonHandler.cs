@@ -24,7 +24,10 @@ public class AButtonHandler : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         // StartCoroutine(MoveButtons());
-        // StartCoroutine(MoveA1andA2InsideArea());
+        //StartCoroutine(MoveA1andA2InsideArea());
+
+        StartCoroutine(MoveA1InsideArea());
+        StartCoroutine(MoveA2InsideArea());
         if (a1.transform.position != progressBar.transform.position)
         {
             // Start the JigglingA1 coroutine every 5 seconds, with a delay of 0 seconds.
@@ -37,26 +40,115 @@ public class AButtonHandler : MonoBehaviour
         StartCoroutine(MoveA1andA2InsideArea());
     }
 
+    private IEnumerator MoveA1InsideArea()
+    {
+
+        float moveDuration = 6.0f; // Adjusted for faster movement
+        float elapsedTime = 0f;
+
+        if (a1.transform.position != progressBar.transform.position)
+        {
+            moveDuration = 2.0f; // Adjusted for faster movement
+            elapsedTime = 0f;
+            Vector3 originalPositionA1 = a1.transform.position;
+            Vector3 targetPositionA1 = moveAreaA1.position;
+
+            while (elapsedTime < moveDuration && shouldMoveButtons)
+            {
+                float t = elapsedTime / moveDuration;
+                a1.transform.position = Vector3.Lerp(originalPositionA1, targetPositionA1, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        // Wait for a moment
+        yield return new WaitForSeconds(1.0f);
+
+        // Keep moving until there's a click
+        while (!isAnimating)
+        {
+            yield return null;
+        }
+
+
+    }
+    private IEnumerator MoveA2InsideArea()
+    {
+        float moveDuration = 6.0f; // Adjusted for faster movement
+        float elapsedTime = 0f;
+
+        if (a2.transform.position != progressBar.transform.position)
+        {
+            moveDuration = 2.0f; // Adjusted for faster movement
+            elapsedTime = 0f;
+
+            Vector3 originalPositionA2 = a2.transform.position;
+            Vector3 targetPositionA2 = moveAreaA2.position;
+
+            while (elapsedTime < moveDuration && shouldMoveButtons)
+            {
+                float t = elapsedTime / moveDuration;
+                a2.transform.position = Vector3.Lerp(originalPositionA2, targetPositionA2, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+
+        }
+
+        // Wait for a moment
+        yield return new WaitForSeconds(1.0f);
+
+        // Keep moving until there's a click
+        while (!isAnimating)
+        {
+            yield return null;
+        }
+
+    }
+
     private IEnumerator MoveA1andA2InsideArea()
     {
         float moveDuration = 10.0f; // Adjusted for faster movement
         float elapsedTime = 0f;
 
-        Vector3 originalPositionA1 = a1.transform.position;
-        Vector3 targetPositionA1 = moveAreaA1.position;
-
-        Vector3 originalPositionA2 = a2.transform.position;
-        Vector3 targetPositionA2 = moveAreaA2.position;
-
-
-        while (elapsedTime < moveDuration && shouldMoveButtons)
+        if(a1.transform.position != progressBar.transform.position)
         {
-            float t = elapsedTime / moveDuration;
-            a1.transform.position = Vector3.Lerp(originalPositionA1, targetPositionA1, t);
-            a2.transform.position = Vector3.Lerp(originalPositionA2, targetPositionA2, t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+             moveDuration = 10.0f; // Adjusted for faster movement
+             elapsedTime = 0f;
+            Vector3 originalPositionA1 = a1.transform.position;
+            Vector3 targetPositionA1 = moveAreaA1.position;
+
+            while (elapsedTime < moveDuration && shouldMoveButtons)
+            {
+                float t = elapsedTime / moveDuration;
+                a1.transform.position = Vector3.Lerp(originalPositionA1, targetPositionA1, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
         }
+
+        if(a2.transform.position != progressBar.transform.position)
+        {
+            moveDuration = 10.0f; // Adjusted for faster movement
+            elapsedTime = 0f;
+
+            Vector3 originalPositionA2 = a2.transform.position;
+            Vector3 targetPositionA2 = moveAreaA2.position;
+
+            while (elapsedTime < moveDuration && shouldMoveButtons)
+            {
+                float t = elapsedTime / moveDuration;
+                a2.transform.position = Vector3.Lerp(originalPositionA2, targetPositionA2, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+
+        }
+
+
 
 
         // Wait for a moment
@@ -120,11 +212,7 @@ public class AButtonHandler : MonoBehaviour
            
             StartCoroutine(SpiralAnimation());
         }
-        else
-        {
-            PlayerPrefs.SetInt("complete", 1);
-            PlayerPrefs.Save();
-        }
+       
     }
 
     private IEnumerator SpiralAnimation()
@@ -175,7 +263,7 @@ public class AButtonHandler : MonoBehaviour
     private IEnumerator LoadSceneAfterDelay()
     {
         // Wait for the specified delay
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         // Load the next scene
         SceneManager.LoadScene(nextSceneName);
