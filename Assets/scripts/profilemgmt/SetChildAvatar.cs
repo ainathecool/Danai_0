@@ -16,9 +16,11 @@ public class SetChildAvatar : MonoBehaviour
     public Button nextButton;
 
     private int selectedAvatarIndex = -1; // Store the index of the selected avatar.
+    private DatabaseReference databaseReference;
 
     private void Start()
     {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
         // Disable the "Next" button at the start.
         nextButton.interactable = false;
     }
@@ -61,4 +63,43 @@ public class SetChildAvatar : MonoBehaviour
             SceneManager.LoadScene("SetChildPartner"); // Replace with your actual scene name.
         }
     }
+
+    public void UpdateChildAvatar()
+    {
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+        string childId = PlayerPrefs.GetString("LoggedInChild");
+
+        if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(childId))
+        {
+            string avatarName = PlayerPrefs.GetString("ChildAvatar", avatarDisplay.sprite.name);
+
+            if (!string.IsNullOrEmpty(avatarName))
+            {
+                // Construct the path to update the avatar value in the database
+                string path = $"childProfiles/{userId}/profiles/{childId}/Avatar";
+
+                // Update the avatar value in the Firebase Realtime Database
+                databaseReference.Child(path).SetValueAsync(avatarName).ContinueWith(task =>
+                {
+                    if (task.IsCompleted)
+                    {
+                        Debug.Log("Avatar updated successfully!");
+                    }
+                    else if (task.IsFaulted)
+                    {
+                        Debug.LogError("Failed to update avatar: " + task.Exception);
+                    }
+                });
+            }
+            else
+            {
+                Debug.LogWarning("Avatar name is empty!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("User ID or child ID is empty!");
+        }
+    }
+
 }
