@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActiveStatus : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class ActiveStatus : MonoBehaviour
         else if (status == "false")
         {
             statusObj.SetActive(false);
+            SceneManager.LoadScene("childHome");
         }
       
     }

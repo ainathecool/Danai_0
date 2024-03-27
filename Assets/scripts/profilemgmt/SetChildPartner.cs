@@ -23,7 +23,7 @@ public class SetChildPartner : MonoBehaviour
         databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
 
         // Hide the save button initially.
-        saveProfileButton.interactable = false;
+       // saveProfileButton.interactable = false;
     }
 
     public void OnPartnerButtonClicked(int partnerIndex)
@@ -34,7 +34,7 @@ public class SetChildPartner : MonoBehaviour
         PlayerPrefs.SetString("Partner", selectedPartner);
 
         // Enable the save button.
-        saveProfileButton.interactable = true;
+       // saveProfileButton.interactable = true;
     }
 
     public async void OnSaveProfileButtonClicked()
@@ -71,6 +71,45 @@ public class SetChildPartner : MonoBehaviour
         catch (Exception e)
         {
             statusText.text = "Failed to save child profile: " + e.Message;
+        }
+    }
+
+    public void UpdateChildPartner()
+    {
+        
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+        string childId = PlayerPrefs.GetString("LoggedInChild");
+
+        if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(childId))
+        {
+            string partner = PlayerPrefs.GetString("Partner");
+
+            if (!string.IsNullOrEmpty(partner))
+            {
+                // Construct the path to update the avatar value in the database
+                string path = $"childProfiles/{userId}/profiles/{childId}/Partner";
+
+                // Update the avatar value in the Firebase Realtime Database
+                databaseReference.Child(path).SetValueAsync(partner).ContinueWith(task =>
+                {
+                    if (task.IsCompleted)
+                    {
+                        Debug.Log("Partner updated successfully!");
+                    }
+                    else if (task.IsFaulted)
+                    {
+                        Debug.LogError("Failed to update Partner: " + task.Exception);
+                    }
+                });
+            }
+            else
+            {
+                Debug.LogWarning("partner name is empty!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("User ID or child ID is empty!");
         }
     }
 }

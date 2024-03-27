@@ -66,12 +66,13 @@ public class SetChildAvatar : MonoBehaviour
 
     public void UpdateChildAvatar()
     {
+        PlayerPrefs.SetString("ChildAvatar", avatarDisplay.sprite.name);
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
         string childId = PlayerPrefs.GetString("LoggedInChild");
 
         if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(childId))
         {
-            string avatarName = PlayerPrefs.GetString("ChildAvatar", avatarDisplay.sprite.name);
+            string avatarName = PlayerPrefs.GetString("ChildAvatar");
 
             if (!string.IsNullOrEmpty(avatarName))
             {
