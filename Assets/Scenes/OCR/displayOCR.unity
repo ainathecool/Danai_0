@@ -1203,8 +1203,8 @@ MonoBehaviour:
     AI voice chatbot \r\nFor Guardians:\r\n\u2022\tAdding more child profiles\r\n\u2022\tProgress
     tracking\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
-  m_sharedMaterial: {fileID: -9151948573293329737, guid: ae4e7bde7f9b89b43a3e9d53f894b678, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b48374b346e892f4bbdb98b7382452f3, type: 2}
+  m_sharedMaterial: {fileID: 219379309245816197, guid: b48374b346e892f4bbdb98b7382452f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 600371362}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3084042
+  m_Size: 0.2514261
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
