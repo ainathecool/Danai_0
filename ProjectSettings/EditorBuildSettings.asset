@@ -590,4 +590,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GuardianSection Scenes/ChangePassLogin.unity
     guid: d3ae4b0a8df16ab41b3d01bffa085a07
+  - enabled: 1
+    path: Assets/Scenes/OCR/displayOCR.unity
+    guid: d925f15dda7e7d049a06321d2ccd7407
   m_configObjects: {}
