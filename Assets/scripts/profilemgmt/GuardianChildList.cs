@@ -90,6 +90,7 @@ public class GuardianChildList : MonoBehaviour
     {
         if(text.text == "no")
         {
+           
             MakeAProfileFirst.text = "Make a child profile first, so you can visit Child Section.";
         }
         else if (text.text == "yes") { SceneManager.LoadScene("ChildWhoAreYou"); }

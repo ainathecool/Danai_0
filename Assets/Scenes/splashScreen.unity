@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginSceneName: GuardianLogin
   childProfilesSceneName: ChildProfiles
-  delayBeforeLoad: 4
+  delayBeforeLoad: 2
 --- !u!82 &2123205457
 AudioSource:
   m_ObjectHideFlags: 0
