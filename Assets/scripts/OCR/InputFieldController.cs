@@ -26,6 +26,13 @@ public class InputFieldController : MonoBehaviour
             // If parsing is successful, update the TMP font size
             tmpText.fontSize = fontSize;
         }
+            else
+            {
+                // If parsing fails, set the font size to a default value or handle the error as needed
+                tmpText.fontSize = 25; // For example, setting it to a default value
+            inputField.text = "25";
+        }
+
     }
 
     public void IncreaseFontSize()

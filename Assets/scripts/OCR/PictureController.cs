@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
@@ -56,7 +56,7 @@ public class PictureController : MonoBehaviour
     }
 
 
- /*   public void OpenGallery()
+   public void OpenGallery()
     {
         // Check if the application is running on an Android device
         if (Application.platform == RuntimePlatform.Android)
@@ -92,7 +92,7 @@ public class PictureController : MonoBehaviour
         }
     }
 
-    */
+   
 
     private IEnumerator SendImageForAnalysis(string imageUrl)
     {
@@ -118,4 +118,51 @@ public class PictureController : MonoBehaviour
         }
     }
 }
+*/
+
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class ImageUploader : MonoBehaviour
+{
+    // The URL of the endpoint to which the image is sent
+    private string uploadURL = "https://7zv3os0755.execute-api.us-east-1.amazonaws.com/default/DANAI";
+
+    // The local path to the image you want to upload
+    private string imagePath = @"C:\Users\DEEBYTE COMPUTERS\Pictures\Screenshots\Screenshot 2023-10-11 140021.png";
+
+    void Start()
+    {
+        StartCoroutine(UploadImage(imagePath));
+    }
+
+    IEnumerator UploadImage(string filePath)
+    {
+        byte[] imageData = System.IO.File.ReadAllBytes(filePath);
+
+        UnityWebRequest www = new UnityWebRequest(uploadURL, UnityWebRequest.kHttpVerbPOST);
+        UploadHandlerRaw uhr = new UploadHandlerRaw(imageData);
+        www.uploadHandler = uhr;
+        www.downloadHandler = new DownloadHandlerBuffer(); // To handle the response
+        // Set the content type depending on the image format
+        // For PNG, use "image/png"
+        www.SetRequestHeader("Content-Type", "image/jpeg");
+
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.Log($"Error uploading image: {www.error}");
+        }
+        else
+        {
+            Debug.Log("Image successfully uploaded.");
+            // Display or process the response
+            string responseText = www.downloadHandler.text;
+            Debug.Log($"Server response: {responseText}");
+        }
+    }
+}
+
 

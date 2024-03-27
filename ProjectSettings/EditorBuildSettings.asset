@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Phase 2/dScene2.unity
     guid: 7006996fcab9b5a4ba4e982b6c8ff298
   - enabled: 1
+    path: Assets/Scenes/OCR/displayOCR.unity
+    guid: d925f15dda7e7d049a06321d2ccd7407
+  - enabled: 1
     path: Assets/Scenes/DyslexiaInPakistanScene.unity
     guid: 17a60d1b02d4f8145a56f40426e19958
   - enabled: 1
