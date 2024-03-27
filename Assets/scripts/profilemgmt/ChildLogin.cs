@@ -102,34 +102,45 @@ public class ChildLogin : MonoBehaviour
         // Fetch the child's PIN from the database.
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
         DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).GetValueAsync();
-        string childPIN = (string)dataSnapshot.Child("PIN").Value;
-        Debug.Log("child pin: " + childPIN);
 
-        // Remove extra spaces from the fetched PIN.
-        //   childPIN = childPIN.Replace(" ", "");
-
-        // Compare the fetched PIN with the PIN entered by the user.
-        string enteredPIN = PlayerPrefs.GetString("PIN");
-        if (enteredPIN == childPIN && pinCircles[0].sprite.name != "pinCircle" && pinCircles[1].sprite.name != "pinCircle" && pinCircles[2].sprite.name != "pinCircle" && pinCircles[3].sprite.name != "pinCircle"
-    && pinCircles[0].sprite != null && pinCircles[1].sprite != null && pinCircles[2].sprite != null && pinCircles[3].sprite != null)
+        if (dataSnapshot.Exists)
         {
-            // PINs match, load the next scene.
-            try
+            foreach (var childSnapshot in dataSnapshot.Children)
             {
-                Debug.Log("success");
-                SceneManager.LoadScene("childHome");
-            }
-            catch (Exception e)
-            {
-                Debug.LogError("Error loading the next scene: " + e.Message);
-                pinError.text = "Error loading the next scene!";
+                string childPIN = (string)childSnapshot.Child("PIN").Value;
+                Debug.Log("child pin: " + childPIN);
+                string enteredPIN = PlayerPrefs.GetString("PIN");
+                Debug.Log("entered pin: " +  enteredPIN);
+
+                if (enteredPIN == childPIN && pinCircles[0].sprite.name != "pinCircle" && pinCircles[1].sprite.name != "pinCircle" && pinCircles[2].sprite.name != "pinCircle" && pinCircles[3].sprite.name != "pinCircle"
+  && pinCircles[0].sprite != null && pinCircles[1].sprite != null && pinCircles[2].sprite != null && pinCircles[3].sprite != null)
+                {
+                    // PINs match, load the next scene.
+                    try
+                    {
+                        Debug.Log("success");
+                        SceneManager.LoadScene("childHome");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("Error loading the next scene: " + e.Message);
+                        pinError.text = "Error loading the next scene!";
+                    }
+                }
+                else
+                {
+                    // PINs do not match, display an error message.
+                    pinError.text = "Incorrect PIN!";
+                }
+
             }
         }
-        else
-        {
-            // PINs do not match, display an error message.
-            pinError.text = "Incorrect PIN!";
-        }
+            
+        
+
+        
+
+      
     }
 
 

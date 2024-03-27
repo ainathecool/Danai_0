@@ -4,6 +4,7 @@ using Firebase.Auth;
 using TMPro;
 using UnityEngine.SceneManagement; 
 using Firebase.Database;
+using System.Collections;
 
 public class GuardianChildList : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class GuardianChildList : MonoBehaviour
     public TextMeshProUGUI MakeAProfileFirst;
     public TextMeshProUGUI ChildName;
     public Image Avatar;
+    public Button ChildSec;
+    public TextMeshProUGUI text;
+
     //public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
     //public GameObject ChildProfileRowPrefab; // Prefab for child profile rows.
 
     private DatabaseReference databaseReference;
-
+   
+   
     private void Start()
     {
         // Initialize the Firebase Realtime Database reference.
@@ -41,6 +46,8 @@ public class GuardianChildList : MonoBehaviour
 
     private async void FetchAndDisplayChildProfiles()
     {
+        TextMeshProUGUI buttonText = ChildSec.GetComponentInChildren<TextMeshProUGUI>();
+
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
         DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).GetValueAsync();
 
@@ -63,6 +70,8 @@ public class GuardianChildList : MonoBehaviour
                 // Load the corresponding sprite from Resources/Avatars/.
                 Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
                 Avatar.sprite = avatarSprite;
+                buttonText.text = "yes";
+           
               
             }
         }
@@ -70,15 +79,20 @@ public class GuardianChildList : MonoBehaviour
         {
             // No child profiles exist; display a message.
             GuardianNameText.text = "No child profiles exist.";
+            buttonText.text = "no";
         }
+
+        
     }
 
+     
     public void GoToChildSection()
     {
-        if(GuardianNameText.text == "No child profiles exist.")
+        if(text.text == "no")
         {
             MakeAProfileFirst.text = "Make a child profile first, so you can visit Child Section.";
         }
+        else if (text.text == "yes") { SceneManager.LoadScene("ChildWhoAreYou"); }
     }
     public void GoToAddChildInfoScene()
     {

@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ParentalGate : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class ParentalGate : MonoBehaviour
         Debug.Log("Firebase initialized successfully");
         FetchRandomQuestion();
 
-        submitButton.onClick.AddListener(ValidateAnswer);
 
     }
 
@@ -57,6 +57,8 @@ public class ParentalGate : MonoBehaviour
                 string answer = randomStuffSnapshot.Child("Answer").GetValue(true).ToString();
                 Debug.Log("a" + answer);
                 DisplayQuestion(question, answer);
+
+                PlayerPrefs.SetString("correctans", answer);
             }
         }
     }
@@ -65,18 +67,24 @@ public class ParentalGate : MonoBehaviour
     {
         questionText.text = question;
         answerInput.placeholder.GetComponent<TextMeshProUGUI>().text = "";
+
+
     }
 
 
 
-    public void ValidateAnswer()
+    public void ValidateAnswer( )
     {
         string parentResponse = answerInput.text;
-        string correctAnswer = answerInput.placeholder.GetComponent<TextMeshProUGUI>().text;
+        string correctAnswer = PlayerPrefs.GetString("correctans");
+        Debug.Log("enetered: a" + parentResponse);
+        Debug.Log("correct: " + correctAnswer);
 
-        if (parentResponse.Trim().Equals(correctAnswer.Trim(), StringComparison.OrdinalIgnoreCase))
+       // if (parentResponse.Trim().Equals(correctAnswer.Trim(), StringComparison.OrdinalIgnoreCase))
+       if(parentResponse == correctAnswer)
         {
             Debug.Log("Access Granted");
+            PlayerPrefs.DeleteKey("correctans");
             SceneManager.LoadScene("childProfiles");
         }
         else
@@ -84,7 +92,9 @@ public class ParentalGate : MonoBehaviour
             Debug.Log("Access Denied");
             tryAgain.text = "Try Again"; // Display "Try Again"
             answerInput.text = ""; // Clear user input
-            FetchRandomQuestion(); // Fetch another question
+                                   // FetchRandomQuestion(); // Fetch another question
+            PlayerPrefs.DeleteKey("correctans");
+            SceneManager.LoadScene("ParentalGate");
         }
     }
 }
