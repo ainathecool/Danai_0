@@ -32,6 +32,27 @@ public class GuardianLogin : MonoBehaviour
         }
     }
 
+    public async void OnCPLoginButtonClicked()
+    {
+        string email = EmailInput.text;
+        string password = PasswordInput.text;
+        Debug.Log("in login fucntion");
+
+        try
+        {
+            Debug.Log("trying");
+            await auth.SignInWithEmailAndPasswordAsync(email, password);
+            Debug.Log("User logged in successfully!");
+            SceneManager.LoadScene("ChangePassword");
+        }
+        catch (Exception e)
+        {
+            // Handle login failure and show an error message.
+            Debug.LogError("Login failed: " + e.Message);
+            LoginError.text = e.Message + " Try Again!";
+        }
+    }
+
     public async void OnLoginButtonClicked()
     {
         string email = EmailInput.text;

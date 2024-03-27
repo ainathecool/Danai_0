@@ -584,4 +584,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChatBot/KidsChatBot.unity
     guid: 1636548594d5f5c48a20c39c47a84cac
+  - enabled: 1
+    path: Assets/Scenes/GuardianSection Scenes/ChangePassword.unity
+    guid: 6e9480629e3741b4589e60cc2216f78f
+  - enabled: 1
+    path: Assets/Scenes/GuardianSection Scenes/ChangePassLogin.unity
+    guid: d3ae4b0a8df16ab41b3d01bffa085a07
   m_configObjects: {}
