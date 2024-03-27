@@ -8,6 +8,7 @@ using Firebase.Database;
 public class GuardianChildList : MonoBehaviour
 {
     public TextMeshProUGUI GuardianNameText;
+    public TextMeshProUGUI MakeAProfileFirst;
     public TextMeshProUGUI ChildName;
     public Image Avatar;
     //public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
@@ -72,7 +73,13 @@ public class GuardianChildList : MonoBehaviour
         }
     }
 
-
+    public void GoToChildSection()
+    {
+        if(GuardianNameText.text == "No child profiles exist.")
+        {
+            MakeAProfileFirst.text = "Make a child profile first, so you can visit Child Section.";
+        }
+    }
     public void GoToAddChildInfoScene()
     {
         SceneManager.LoadScene("AddChildProfiles"); // Replace with your actual scene name.

@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Firebase;
-using Firebase.Extensions;
 using Firebase.Auth;
 
 public class SplashScreenController : MonoBehaviour
@@ -24,6 +22,7 @@ public class SplashScreenController : MonoBehaviour
         // Check if a user is currently logged in.
         if (IsUserLoggedIn())
         {
+            Debug.Log("user logged in " + FirebaseAuth.DefaultInstance.CurrentUser.UserId);
             // User is logged in, load the Child Profiles scene.
             SceneManager.LoadScene(childProfilesSceneName);
         }
