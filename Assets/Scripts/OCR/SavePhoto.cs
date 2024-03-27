@@ -112,7 +112,7 @@ public class SavePhoto : MonoBehaviour
             Debug.Log($"Server response: {responseText}");
 
             // Set the text of the TMP text field
-            textField.text = responseText;
+            textField.text = responseText.Substring(19, responseText.Length - 21);
             toUpload.SetActive(false);
             // Unhide the empty GameObject
             toDisplay.SetActive(true);
