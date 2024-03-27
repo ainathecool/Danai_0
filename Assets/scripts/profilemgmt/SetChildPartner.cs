@@ -64,7 +64,7 @@ public class SetChildPartner : MonoBehaviour
 
         try
         {
-            await databaseReference.Child("childProfiles").Child(userId).Child(childId).SetRawJsonValueAsync(JsonUtility.ToJson(childProfile));
+            await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).SetRawJsonValueAsync(JsonUtility.ToJson(childProfile));
             statusText.text = "Child profile saved successfully!";
             SceneManager.LoadScene("ChildProfiles");
         }

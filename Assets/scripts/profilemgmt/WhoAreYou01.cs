@@ -1,17 +1,13 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Extensions;
 using Firebase.Auth;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine.SceneManagement; // Add this using statement for SceneManager.
 using Firebase.Database;
 
-public class WhoAreYou : MonoBehaviour
+public class WhoAreYou01 : MonoBehaviour
 {
-    
+
     public TextMeshProUGUI ChildName;
     public Image Avatar;
     //public Transform ChildProfilesList; // Reference to the Vertical Layout Group.
@@ -30,17 +26,26 @@ public class WhoAreYou : MonoBehaviour
         FetchAndDisplayChildProfiles();
     }
 
- 
+
 
     private async void FetchAndDisplayChildProfiles()
     {
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
-        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).GetValueAsync();
+        string Child01ID = PlayerPrefs.GetString("ChildProfile_" + 0);
+        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(Child01ID).GetValueAsync();
 
         if (dataSnapshot.Exists)
         {
             // Child profiles exist; iterate through them and create UI elements.
-            foreach (var childSnapshot in dataSnapshot.Children)
+
+            string childName = (string)dataSnapshot.Child("Name").Value;
+            ChildName.text = childName;
+
+            string avatarName = (string)dataSnapshot.Child("Avatar").Value;
+            Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
+            Avatar.sprite = avatarSprite;
+
+          /*  foreach (var childSnapshot in dataSnapshot.Children)
             {
                 // Instantiate a child profile row from the prefab.
                 //  GameObject childProfileRow = Instantiate(ChildProfileRowPrefab, ChildProfilesList);
@@ -57,15 +62,15 @@ public class WhoAreYou : MonoBehaviour
                 Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
                 Avatar.sprite = avatarSprite;
 
-            }
+            }*/
         }
-       
+
     }
 
 
     public void GoToChildLoginScene()
     {
-        SceneManager.LoadScene("ChildLogin"); 
+        SceneManager.LoadScene("ChildLogin");
     }
 }
 

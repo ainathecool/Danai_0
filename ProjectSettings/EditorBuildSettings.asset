@@ -593,4 +593,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OCR/displayOCR.unity
     guid: d925f15dda7e7d049a06321d2ccd7407
+  - enabled: 1
+    path: Assets/Scenes/ProfileMgmt/ChildWhoAreYou02.unity
+    guid: e04d188d199155a4785a89d448581851
+  - enabled: 1
+    path: Assets/Scenes/ProfileMgmt/ChildWhoAreYou03.unity
+    guid: 9d256dffb3a7b7a408822d65fdc436ca
+  - enabled: 1
+    path: Assets/Scenes/ProfileMgmt/ChildLogin02.unity
+    guid: 66c30caf5d703de4d9293564913b24ba
+  - enabled: 1
+    path: Assets/Scenes/ProfileMgmt/ChildLogin03.unity
+    guid: 1880814db6315fe4cae15ff367b1430e
   m_configObjects: {}

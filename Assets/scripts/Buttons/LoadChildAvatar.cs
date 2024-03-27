@@ -22,13 +22,14 @@ public class LoadChildAvatar : MonoBehaviour
     public async void LoadAvatar()
     {
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
-        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).GetValueAsync();
+        string childId = PlayerPrefs.GetString("LoggedInChild");
+        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).GetValueAsync();
 
         if (dataSnapshot.Exists)
         {
-            foreach (var childSnapshot in dataSnapshot.Children)
+          //  foreach (var childSnapshot in dataSnapshot.Children)
             {
-                string avatarName = (string)childSnapshot.Child("Avatar").Value;
+                string avatarName = (string)dataSnapshot.Child("Avatar").Value;
                 Sprite avatarSprite = Resources.Load<Sprite>("Avatars/" + avatarName);
                 Avatar.image.sprite = avatarSprite;
             }

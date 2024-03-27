@@ -95,19 +95,20 @@ public class ChildLogin : MonoBehaviour
 
    
 
-    public async void OnNextButtonClicked()
+    public async void OnNextButtonClicked01()
     {
         Debug.Log("pin: " + PlayerPrefs.GetString("PIN"));
 
         // Fetch the child's PIN from the database.
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
-        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).GetValueAsync();
+        string Child01ID = PlayerPrefs.GetString("ChildProfile_" + 0); //for child 1 login
+        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(Child01ID).GetValueAsync();
 
         if (dataSnapshot.Exists)
         {
-            foreach (var childSnapshot in dataSnapshot.Children)
+           // foreach (var childSnapshot in dataSnapshot.Children)
             {
-                string childPIN = (string)childSnapshot.Child("PIN").Value;
+                string childPIN = (string)dataSnapshot.Child("PIN").Value;
                 Debug.Log("child pin: " + childPIN);
                 string enteredPIN = PlayerPrefs.GetString("PIN");
                 Debug.Log("entered pin: " +  enteredPIN);
@@ -119,6 +120,7 @@ public class ChildLogin : MonoBehaviour
                     try
                     {
                         Debug.Log("success");
+                        PlayerPrefs.SetString("LoggedInChild", Child01ID);
                         SceneManager.LoadScene("childHome");
                     }
                     catch (Exception e)
@@ -135,13 +137,100 @@ public class ChildLogin : MonoBehaviour
 
             }
         }
-            
-        
+          
+    } //function ending 
 
-        
 
-      
-    }
+    public async void OnNextButtonClicked02()
+    {
+        Debug.Log("pin: " + PlayerPrefs.GetString("PIN"));
+
+        // Fetch the child's PIN from the database.
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+        string Child02ID = PlayerPrefs.GetString("ChildProfile_" + 1); //for child 1 login
+        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(Child02ID).GetValueAsync();
+
+        if (dataSnapshot.Exists)
+        {
+            // foreach (var childSnapshot in dataSnapshot.Children)
+            {
+                string childPIN = (string)dataSnapshot.Child("PIN").Value;
+                Debug.Log("child pin: " + childPIN);
+                string enteredPIN = PlayerPrefs.GetString("PIN");
+                Debug.Log("entered pin: " + enteredPIN);
+
+                if (enteredPIN == childPIN && pinCircles[0].sprite.name != "pinCircle" && pinCircles[1].sprite.name != "pinCircle" && pinCircles[2].sprite.name != "pinCircle" && pinCircles[3].sprite.name != "pinCircle"
+  && pinCircles[0].sprite != null && pinCircles[1].sprite != null && pinCircles[2].sprite != null && pinCircles[3].sprite != null)
+                {
+                    // PINs match, load the next scene.
+                    try
+                    {
+                        Debug.Log("success");
+                        PlayerPrefs.SetString("LoggedInChild", Child02ID);
+                        SceneManager.LoadScene("childHome");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("Error loading the next scene: " + e.Message);
+                        pinError.text = "Error loading the next scene!";
+                    }
+                }
+                else
+                {
+                    // PINs do not match, display an error message.
+                    pinError.text = "Incorrect PIN!";
+                }
+
+            }
+        }
+
+    } //function ending 
+
+
+    public async void OnNextButtonClicked03()
+    {
+        Debug.Log("pin: " + PlayerPrefs.GetString("PIN"));
+
+        // Fetch the child's PIN from the database.
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+        string Child03ID = PlayerPrefs.GetString("ChildProfile_" + 2); //for child 1 login
+        DataSnapshot dataSnapshot = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(Child03ID).GetValueAsync();
+
+        if (dataSnapshot.Exists)
+        {
+            // foreach (var childSnapshot in dataSnapshot.Children)
+            {
+                string childPIN = (string)dataSnapshot.Child("PIN").Value;
+                Debug.Log("child pin: " + childPIN);
+                string enteredPIN = PlayerPrefs.GetString("PIN");
+                Debug.Log("entered pin: " + enteredPIN);
+
+                if (enteredPIN == childPIN && pinCircles[0].sprite.name != "pinCircle" && pinCircles[1].sprite.name != "pinCircle" && pinCircles[2].sprite.name != "pinCircle" && pinCircles[3].sprite.name != "pinCircle"
+  && pinCircles[0].sprite != null && pinCircles[1].sprite != null && pinCircles[2].sprite != null && pinCircles[3].sprite != null)
+                {
+                    // PINs match, load the next scene.
+                    try
+                    {
+                        Debug.Log("success");
+                        PlayerPrefs.SetString("LoggedInChild", Child03ID);
+                        SceneManager.LoadScene("childHome");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError("Error loading the next scene: " + e.Message);
+                        pinError.text = "Error loading the next scene!";
+                    }
+                }
+                else
+                {
+                    // PINs do not match, display an error message.
+                    pinError.text = "Incorrect PIN!";
+                }
+
+            }
+        }
+
+    } //function ending 
 
 
 }
