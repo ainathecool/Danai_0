@@ -19,6 +19,8 @@ public class AButtonHandler : MonoBehaviour
     private bool isAnimating = false;
     private bool shouldMoveButtons = true;
 
+    private int count;// for imp tracking
+
 
     void Start()
     {
@@ -163,8 +165,11 @@ public class AButtonHandler : MonoBehaviour
 
     public void OnHintsButtonClicked()
     {
+        count = PlayerPrefs.GetInt("Phase1Hints");
+
         if (!isAnimating)
         {
+            PlayerPrefs.SetInt("Phase1Hints", count + 1);
             StartCoroutine(ScalingAnimation());
         }
     }

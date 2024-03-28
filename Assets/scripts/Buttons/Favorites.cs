@@ -21,6 +21,7 @@ public class Favorites : MonoBehaviour
     public void OnFavButtonClicked()
     {
         string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId; //parent id
+        string childId = PlayerPrefs.GetString("LoggedInChild");
 
         if (!string.IsNullOrEmpty(FavSceneName))
         {
@@ -28,7 +29,9 @@ public class Favorites : MonoBehaviour
             if (!string.IsNullOrEmpty(userId))
             {
                 // Construct the path to store feedback under the guardian's node
-                string favPath = "childProfiles/" + userId + "/favorites/";
+               // string favPath = "childProfiles/" + userId + "/favorites/";
+
+               string favPath = $"childProfiles/{userId}/profiles/{childId}/favorites/";
 
                 // await databaseReference.Child("guardians").Child(userId).Child("feedbacks").SetValueAsync(feedback);
                 // Push the feedback to generate a unique key
@@ -37,7 +40,7 @@ public class Favorites : MonoBehaviour
                 {
                     if (task.IsCompleted)
                     {
-                        Debug.Log("Feedback submitted successfully!");
+                        Debug.Log("fav submitted successfully!");
                         Fav.image.color = Color.green;
                     }
                     else

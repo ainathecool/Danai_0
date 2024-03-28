@@ -11,29 +11,37 @@ public class SButtonController : MonoBehaviour
     private Vector3 originalPosition;
     private bool isAnimating = false;
 
+    private int count;// for imp tracking
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Assuming you have a method connected to the hintsButton's onClick event.
     public void OnHintsButtonClick()
     {
+        count = PlayerPrefs.GetInt("Phase1Hints");
         if (!isAnimating)
         {
             if(s1Button.transform.position != progressBar.transform.position) 
             {
                 originalPosition = s1Button.transform.position;
+                PlayerPrefs.SetInt("Phase1Hints", count + 1);
+
                 StartCoroutine(HoverAnimationS1());
             }
             else if(s2Button.transform.position != progressBar.transform.position)
             {
                 originalPosition = s2Button.transform.position;
+                PlayerPrefs.SetInt("Phase1Hints", count + 1);
                 StartCoroutine(HoverAnimationS2());
             }
             else if(s3Button.transform.position != progressBar.transform.position)
             {
                 originalPosition= s3Button.transform.position;
+                PlayerPrefs.SetInt("Phase1Hints", count + 1);
                 StartCoroutine(HoverAnimationS3());
             }
             else
