@@ -2,10 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class MatchTheSoundWithWordGame : MonoBehaviour
 {
     public GameObject gamePrefab; // Reference to the prefab containing the game elements
+
+    private int count;// for imp tracking
+    private int incorrectCount; //for incorrect stuff in imp tracking
 
     void Start()
     {
@@ -94,11 +98,14 @@ public class MatchTheSoundWithWordGame : MonoBehaviour
         if (tappedWordText == correctWord)
         {
             Debug.Log("You win!");
+            SceneManager.LoadScene("DLS_game2_complete");
             // Add your win logic here
         }
         else
         {
+            incorrectCount = PlayerPrefs.GetInt("Phase4and5IncorrectPlays");
             Debug.Log("Try again!");
+            PlayerPrefs.SetInt("Phase4and5IncorrectPlays", incorrectCount + 1);
             // Add your try again logic here
         }
     }

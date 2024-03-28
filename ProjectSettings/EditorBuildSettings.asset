@@ -62,7 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Games/Phase 2/eScene1.unity
     guid: b81702f6b009bd9439d89a1b50edabff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FactsAboutDyslexiaScene.unity
     guid: e6fdb193c9d26204ea9aca293e913138
   - enabled: 1
@@ -617,4 +617,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Buttons/UpdateMusicSettings.unity
     guid: 01d302ab3c253234498f29eb5e4bef22
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DLS_game_complete.unity
+    guid: ce17828bebdd97b4dbde2fcf1ef36062
+  - enabled: 1
+    path: Assets/Scenes/Games/Phases4,5/DLS_game2_complete.unity
+    guid: 7e97093e15917b8408a04289d30885ae
   m_configObjects: {}

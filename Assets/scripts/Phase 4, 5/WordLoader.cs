@@ -56,8 +56,8 @@ public class WordLoader : MonoBehaviour
             {
                 // Extract sound URL
                 var wordData = randomWordSnapshot.Value as Dictionary<string, object>;
-                var soundUrl = wordData["sound_url"].ToString();
-                Debug.Log("Sound URL: " + soundUrl);
+               // var soundUrl = wordData["sound_url"].ToString();
+               // Debug.Log("Sound URL: " + soundUrl);
 
                 // Instantiate the prefab
                 if (wordPrefab != null)

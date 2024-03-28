@@ -8,11 +8,15 @@ using System.Collections;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Firebase.Storage;
+using UnityEngine.SceneManagement;
 
 public class MatchTheWordWithPictureGame : MonoBehaviour
 {
     public GameObject gamePrefab; // Reference to the prefab containing the game elements
-   // public Transform gameContainer; // Reference to the container where the game prefab will be instantiated
+                                  // public Transform gameContainer; // Reference to the container where the game prefab will be instantiated
+
+    private int count;// for imp tracking
+    private int incorrectCount; //for incorrect stuff in imp tracking
 
     void Start()
     {
@@ -66,6 +70,29 @@ public class MatchTheWordWithPictureGame : MonoBehaviour
         }
     }
 
+    public void OnHintsButton()
+    {
+        count = PlayerPrefs.GetInt("Phase4and5Hints");
+        string correctWord = PlayerPrefs.GetString("CorrectWord");
+        // Load the sound from local assets
+        string soundPath = "Sounds/" + correctWord;
+        AudioClip audioClip = Resources.Load<AudioClip>(soundPath);
+        if (audioClip != null)
+        {
+            PlayerPrefs.SetInt("Phase4and5Hints", count + 1);
+            // soundButton.onClick.AddListener(() => PlaySound(audioClip));
+
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            Debug.Log("playing");
+        }
+        else
+        {
+            Debug.LogError("Failed to load sound from path: " + soundPath);
+        }
+    }
+
     void ShuffleArray<T>(T[] array)
     {
         for (int i = array.Length - 1; i > 0; i--)
@@ -89,12 +116,16 @@ public class MatchTheWordWithPictureGame : MonoBehaviour
         // Compare the names
         if (tappedImageName == correctWord)
         {
+            
             Debug.Log("You win!");
+            SceneManager.LoadScene("DLS_game_complete");
             // Add your win logic here
         }
         else
         {
+            incorrectCount = PlayerPrefs.GetInt("Phase4and5IncorrectPlays");
             Debug.Log("Try again!");
+            PlayerPrefs.SetInt("Phase4and5IncorrectPlays", incorrectCount + 1);
             // Add your try again logic here
         }
     }
