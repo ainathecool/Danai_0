@@ -166,6 +166,28 @@ public class GuardianChildList : MonoBehaviour
        
     }
 
+    public void OnImpTrackingButtonClicked(string name)
+    {
+        if(name == "imp1")
+        {
+            string Child01ID = PlayerPrefs.GetString("ChildProfile_" + 0);
+            PlayerPrefs.SetString("Child01ImpTracking", Child01ID);
+           // SceneManager.LoadScene(""); //add maaidah wala scene idhar
+        }
+        else if(name == "imp2")
+        {
+            string Child02ID = PlayerPrefs.GetString("ChildProfile_" + 1);
+            PlayerPrefs.SetString("Child02ImpTracking", Child02ID);
+            // SceneManager.LoadScene(""); //add scene idhar
+        }
+        else if (name == "imp3")
+        {
+            string Child03ID = PlayerPrefs.GetString("ChildProfile_" + 2);
+            PlayerPrefs.SetString("Child03ImpTracking", Child03ID);
+            // SceneManager.LoadScene(""); //add scene idhar
+        }
+    }
+
     public void OnChildSectionButtonClicked(string name)
     {
         if(name == "ChildSection1")
