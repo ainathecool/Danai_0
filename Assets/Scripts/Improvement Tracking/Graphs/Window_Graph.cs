@@ -25,7 +25,7 @@ public class Window_Graph : MonoBehaviour {
     private void Awake() {
         graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
 
-        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33, 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
         ShowGraph(valueList);
     }
 
@@ -63,7 +63,7 @@ public class Window_Graph : MonoBehaviour {
     private void CreateDotConnection(Vector2 dotPositionA, Vector2 dotPositionB) {
         GameObject gameObject = new GameObject("dotConnection", typeof(Image));
         gameObject.transform.SetParent(graphContainer, false);
-        gameObject.GetComponent<Image>().color = new Color(1,1,1, .5f);
+        gameObject.GetComponent<Image>().color = new Color(159f / 255f, 63f / 255f, 54f / 255f, 0.5f); // Set color to RGB (159, 63, 54) with alpha 0.5
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         Vector2 dir = (dotPositionB - dotPositionA).normalized;
         float distance = Vector2.Distance(dotPositionA, dotPositionB);
