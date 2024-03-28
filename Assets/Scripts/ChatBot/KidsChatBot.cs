@@ -236,7 +236,7 @@ public class KidsChatBot : MonoBehaviour
         form.AddBinaryData("audio", audioBytes, "recording.wav", "audio/wav");
 
         // Create a UnityWebRequest to post the form data to the server
-        UnityWebRequest www = UnityWebRequest.Post("http://127.0.0.1:5000/process_audio", form);
+        UnityWebRequest www = UnityWebRequest.Post("http://3.89.20.139:8000/process_audio", form);
         www.downloadHandler = new DownloadHandlerAudioClip(www.url, AudioType.MPEG);
 
         // Send the request and wait for the response

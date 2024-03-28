@@ -16,16 +16,240 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CodeMonkey.Utils;
+using Firebase.Database;
+using Firebase.Auth;
 
 public class Window_Graph : MonoBehaviour {
+
+    public string phaseName;
 
     [SerializeField] private Sprite circleSprite;
     private RectTransform graphContainer;
 
+    private DatabaseReference databaseReference; //will be used to get logged in guardian's stuff
+
     private void Awake() {
         graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
 
-        List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+        // List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+        //ShowGraph(valueList);
+
+        string childToLoad = PlayerPrefs.GetString("ChildToLoad");
+
+        if (childToLoad == "Child01ImpTracking")
+        {
+            string childId = PlayerPrefs.GetString("Child01ImpTracking");
+            Phases(childId);
+
+        }
+        else if(childToLoad == "Child02ImpTracking")
+        {
+            string childId = PlayerPrefs.GetString("Child02ImpTracking");
+            Phases(childId);
+            
+        }
+        else if (childToLoad == "Child3ImpTracking")
+        {
+            string childId = PlayerPrefs.GetString("Child03ImpTracking");
+            Phases(childId);
+        }
+
+
+
+
+
+    }
+
+    private void Phases(string childId)
+    {
+        if (phaseName == "1")
+        {
+            GetDataPhase01(childId);
+        }
+        else if (phaseName == "2")
+        {
+            GetDataPhase02(childId);
+        }
+        else if (phaseName == "3")
+        {
+            GetDataPhase03(childId);
+        }
+        else if (phaseName == "4")
+        {
+            GetDataPhase04(childId);
+        }
+        else if (phaseName == "6")
+        {
+            GetDataPhase06(childId);
+        }
+    }
+
+    private async void GetDataPhase01(string childId)
+    {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+
+        // Fetch data from the ImprovementTracking01 node
+        DataSnapshot dataSnapshotPhase1 = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).Child("ImprovementTracking01").GetValueAsync();
+
+        // Initialize a list to store the values
+        List<int> valueList = new List<int>();
+
+        // Check if data exists in ImprovementTracking01
+        if (dataSnapshotPhase1.Exists)
+        {
+            // Iterate through each child node under ImprovementTracking01
+            foreach (var childSnapshot in dataSnapshotPhase1.Children)
+            {
+                // Parse the value as an integer and add it to the list
+                int value = int.Parse(childSnapshot.Value.ToString());
+                valueList.Add(value);
+                Debug.Log(value);
+            }
+        }
+        else
+        {
+            // If no data exists, add a default value of 0 to the list
+            valueList.Add(0);
+        }
+
+        Debug.Log("valuelist: " + valueList.Count);
+        // Now valueList contains all the values from ImprovementTracking01 or a single 0 if no data exists
+        ShowGraph(valueList);
+    }
+
+    private async void GetDataPhase02(string childId)
+    {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+
+        // Fetch data from the ImprovementTracking01 node
+        DataSnapshot dataSnapshotPhase1 = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).Child("ImprovementTracking02").GetValueAsync();
+
+        // Initialize a list to store the values
+        List<int> valueList = new List<int>();
+
+        // Check if data exists in ImprovementTracking01
+        if (dataSnapshotPhase1.Exists)
+        {
+            // Iterate through each child node under ImprovementTracking01
+            foreach (var childSnapshot in dataSnapshotPhase1.Children)
+            {
+                // Parse the value as an integer and add it to the list
+                int value = int.Parse(childSnapshot.Value.ToString());
+                valueList.Add(value);
+                Debug.Log(value);
+            }
+        }
+        else
+        {
+            // If no data exists, add a default value of 0 to the list
+            valueList.Add(0);
+        }
+
+        Debug.Log("valuelist: " + valueList.Count);
+        // Now valueList contains all the values from ImprovementTracking01 or a single 0 if no data exists
+        ShowGraph(valueList);
+    }
+
+    private async void GetDataPhase03(string childId)
+    {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+
+        // Fetch data from the ImprovementTracking01 node
+        DataSnapshot dataSnapshotPhase1 = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).Child("ImprovementTracking03").GetValueAsync();
+
+        // Initialize a list to store the values
+        List<int> valueList = new List<int>();
+
+        // Check if data exists in ImprovementTracking01
+        if (dataSnapshotPhase1.Exists)
+        {
+            // Iterate through each child node under ImprovementTracking01
+            foreach (var childSnapshot in dataSnapshotPhase1.Children)
+            {
+                // Parse the value as an integer and add it to the list
+                int value = int.Parse(childSnapshot.Value.ToString());
+                valueList.Add(value);
+                Debug.Log(value);
+            }
+        }
+        else
+        {
+            // If no data exists, add a default value of 0 to the list
+            valueList.Add(0);
+        }
+
+        Debug.Log("valuelist: " + valueList.Count);
+        // Now valueList contains all the values from ImprovementTracking01 or a single 0 if no data exists
+        ShowGraph(valueList);
+    }
+
+    private async void GetDataPhase04(string childId)
+    {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+
+        // Fetch data from the ImprovementTracking01 node
+        DataSnapshot dataSnapshotPhase1 = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).Child("ImprovementTracking0506").GetValueAsync();
+
+        // Initialize a list to store the values
+        List<int> valueList = new List<int>();
+
+        // Check if data exists in ImprovementTracking01
+        if (dataSnapshotPhase1.Exists)
+        {
+            // Iterate through each child node under ImprovementTracking01
+            foreach (var childSnapshot in dataSnapshotPhase1.Children)
+            {
+                // Parse the value as an integer and add it to the list
+                int value = int.Parse(childSnapshot.Value.ToString());
+                valueList.Add(value);
+                Debug.Log(value);
+            }
+        }
+        else
+        {
+            // If no data exists, add a default value of 0 to the list
+            valueList.Add(0);
+        }
+
+        Debug.Log("valuelist: " + valueList.Count);
+        // Now valueList contains all the values from ImprovementTracking01 or a single 0 if no data exists
+        ShowGraph(valueList);
+    }
+    private async void GetDataPhase06(string childId)
+    {
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+        string userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+
+        // Fetch data from the ImprovementTracking01 node
+        DataSnapshot dataSnapshotPhase1 = await databaseReference.Child("childProfiles").Child(userId).Child("profiles").Child(childId).Child("ImprovementTracking06").GetValueAsync();
+
+        // Initialize a list to store the values
+        List<int> valueList = new List<int>();
+
+        // Check if data exists in ImprovementTracking01
+        if (dataSnapshotPhase1.Exists)
+        {
+            // Iterate through each child node under ImprovementTracking01
+            foreach (var childSnapshot in dataSnapshotPhase1.Children)
+            {
+                // Parse the value as an integer and add it to the list
+                int value = int.Parse(childSnapshot.Value.ToString());
+                valueList.Add(value);
+                Debug.Log(value);
+            }
+        }
+        else
+        {
+            // If no data exists, add a default value of 0 to the list
+            valueList.Add(0);
+        }
+
+        Debug.Log("valuelist: " + valueList.Count);
+        // Now valueList contains all the values from ImprovementTracking01 or a single 0 if no data exists
         ShowGraph(valueList);
     }
 

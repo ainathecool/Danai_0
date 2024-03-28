@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Firebase.Auth;
+using Firebase.Database;
 
 public class SplashScreenController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SplashScreenController : MonoBehaviour
 
     private void Start()
     {
+        //FirebaseDatabase.GetInstance().SetPersistenceEnabled(true);
+        //FirebaseDatabase.DefaultInstance.SetPersistenceEnabled(true);
         // Start the coroutine to wait for a few seconds before loading the next scene.
         StartCoroutine(LoadNextSceneWithDelay());
     }
@@ -23,6 +26,7 @@ public class SplashScreenController : MonoBehaviour
         if (IsUserLoggedIn())
         {
             Debug.Log("user logged in " + FirebaseAuth.DefaultInstance.CurrentUser.UserId);
+            FirebaseDatabase.DefaultInstance.SetPersistenceEnabled(true);
             // User is logged in, load the Child Profiles scene.
             SceneManager.LoadScene(childProfilesSceneName);
         }

@@ -13,6 +13,7 @@ public class GuardianChildList : MonoBehaviour
     public TextMeshProUGUI ChildName1, ChildName2, ChildName3;
     public Image Avatar1, Avatar2, Avatar3;
     public Button ChildSec1, ChildSec2, ChildSec3;
+    public Button imp1, imp2, imp3;
   //  public TextMeshProUGUI text;
     public Button add;
 
@@ -35,6 +36,9 @@ public class GuardianChildList : MonoBehaviour
         ChildSec1.gameObject.SetActive(false);
         ChildSec2.gameObject.SetActive(false);
         ChildSec3.gameObject.SetActive(false);
+        imp1.gameObject.SetActive(false);
+        imp2.gameObject.SetActive(false);
+        imp3.gameObject.SetActive(false);
 
         // Fetch and display the guardian's name.
         FetchAndDisplayGuardianName();
@@ -134,16 +138,19 @@ public class GuardianChildList : MonoBehaviour
                         ChildName1.text = childName;
                         Avatar1.sprite = avatarSprite;
                         ChildSec1.gameObject.SetActive(true);
+                        imp1.gameObject.SetActive(true);
                         break;
                     case 1:
                         ChildName2.text = childName;
                         Avatar2.sprite = avatarSprite;
                         ChildSec2.gameObject.SetActive(true);
+                        imp2.gameObject.SetActive(true);
                         break;
                     case 2:
                         ChildName3.text = childName;
                         Avatar3.sprite = avatarSprite;
                         ChildSec3.gameObject.SetActive(true);
+                        imp3.gameObject.SetActive(true);
                         add.gameObject.SetActive(false);
                         break;
                     default:
@@ -171,19 +178,22 @@ public class GuardianChildList : MonoBehaviour
         {
             string Child01ID = PlayerPrefs.GetString("ChildProfile_" + 0);
             PlayerPrefs.SetString("Child01ImpTracking", Child01ID);
-           // SceneManager.LoadScene(""); //add maaidah wala scene idhar
+            PlayerPrefs.SetString("ChildToLoad", "Child01ImpTracking");
+            SceneManager.LoadScene("GraphsDisplay"); //add maaidah wala scene idhar
         }
         else if(name == "imp2")
         {
             string Child02ID = PlayerPrefs.GetString("ChildProfile_" + 1);
             PlayerPrefs.SetString("Child02ImpTracking", Child02ID);
-            // SceneManager.LoadScene(""); //add scene idhar
+            PlayerPrefs.SetString("ChildToLoad", "Child02ImpTracking");
+            SceneManager.LoadScene("GraphsDisplay"); //add scene idhar
         }
         else if (name == "imp3")
         {
             string Child03ID = PlayerPrefs.GetString("ChildProfile_" + 2);
             PlayerPrefs.SetString("Child03ImpTracking", Child03ID);
-            // SceneManager.LoadScene(""); //add scene idhar
+            PlayerPrefs.SetString("ChildToLoad", "Child03ImpTracking");
+            SceneManager.LoadScene("GraphsDisplay"); //add scene idhar
         }
     }
 

@@ -33,6 +33,7 @@ public class Phase4and5IncorrectDataLogger : MonoBehaviour
             // Construct the path to update the avatar value in the database
             string path = $"childProfiles/{userId}/profiles/{childId}/ImprovementTracking0506/";
 
+
             DatabaseReference impRef = databaseReference.Child(path).Push();
 
             // Update the avatar value in the Firebase Realtime Database

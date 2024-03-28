@@ -11,8 +11,6 @@ public class Phase1MIRT : MonoBehaviour
         CheckPhase01MIRT(); 
        
     }
-
-    
     public void CheckPhase01MIRT()
     {
         float accuracy = PlayerPrefs.GetFloat("Accuracy");
