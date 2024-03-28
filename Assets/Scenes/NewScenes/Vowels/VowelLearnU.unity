@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1246094523}
-  learnA: {fileID: 8300000, guid: 354c3442c1f4b954893cdae11bfc272a, type: 3}
+  learnA: {fileID: 8300000, guid: 5b08fa1138cf2cb4187fedfff994b1d0, type: 3}
   nextScene: U-CupGame
 --- !u!82 &1246094523
 AudioSource:
