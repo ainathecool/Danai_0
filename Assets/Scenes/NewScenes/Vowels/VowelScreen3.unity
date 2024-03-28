@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1736880444}
-  learnA: {fileID: 8300000, guid: 9ee9b7a0cc2fad7458aa9ddfb06f1434, type: 3}
+  learnA: {fileID: 8300000, guid: 0e7926647e9b7794ca32e30a1195bf6a, type: 3}
   nextScene: VowelGameA
 --- !u!82 &1736880444
 AudioSource:

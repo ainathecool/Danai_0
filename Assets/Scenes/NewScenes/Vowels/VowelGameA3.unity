@@ -354,7 +354,7 @@ MonoBehaviour:
   source: {fileID: 115754842}
   pickUpClip: {fileID: 8300000, guid: 6c9659870a4352243b58bc192c7be0ed, type: 3}
   dropClip: {fileID: 8300000, guid: b1eb472f423fe1b47bca26fd899646f9, type: 3}
-  sceneName: VowelGameA3
+  sceneName: VowelLearnE
   delayBeforeLoading: 1
   draggedbody: {fileID: 115754839}
   hintslot: {fileID: 1861939249}
@@ -1272,7 +1272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22148152, y: 0.5}
   m_AnchorMax: {x: 0.93600005, y: 0.5}
-  m_AnchoredPosition: {x: -10.405, y: 82.93999}
+  m_AnchoredPosition: {x: -10.404999, y: 82.93999}
   m_SizeDelta: {x: -52.37, y: 46.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &506488491

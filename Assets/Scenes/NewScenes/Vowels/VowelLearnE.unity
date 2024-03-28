@@ -1528,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1759201707}
-  learnA: {fileID: 8300000, guid: 00f1ef867974a2f41a1b1e5d77b1768b, type: 3}
+  learnA: {fileID: 8300000, guid: a2cb05adc2b92514ba674d8a1e19ea82, type: 3}
   nextScene: E-EggGame
 --- !u!1 &1770595002
 GameObject:
