@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TraceImage : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class TraceImage : MonoBehaviour
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private float gapThreshold = 0.1f; // Adjust the gap threshold as needed
 
+    public float minArea, maxArea;
+    public string nextSceneName;
+    private int incorrectCount; // to keep track k kitna galat kiya, sahi karnay sa pehlay. this will then be used in mirt
+
+    public PolygonCollider2D outlinedCollider;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -25,6 +31,8 @@ public class TraceImage : MonoBehaviour
         {
             DrawLine();
         }
+
+        incorrectCount = PlayerPrefs.GetInt("Phase2IncorrectCount");
     }
 
     private void StartDrawing()
@@ -37,11 +45,11 @@ public class TraceImage : MonoBehaviour
         LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
         lineRenderer.material = lineMaterial;
-        lineRenderer.startWidth = 0.5f;
-        lineRenderer.endWidth = 0.5f;
+        lineRenderer.startWidth = 0.55f;
+        lineRenderer.endWidth = 0.55f;
         lineRenderer.sortingLayerName = "Default"; // Adjust to your sorting layer
         lineRenderer.sortingOrder = 3; // Adjust the sorting order
-
+        lineRenderer.sortingOrder = 4; // Adjust the sorting order
         lineObjects.Add(lineObject);
         lineRenderers.Add(lineRenderer);
 
@@ -75,7 +83,74 @@ public class TraceImage : MonoBehaviour
                 currentLineRenderer.positionCount = currentPositionCount + 1;
                 currentLineRenderer.SetPosition(currentPositionCount, mousePosition);
                 Debug.Log("Drawing line point");
+                CalculateAreaOfDrawnShape();
             }
         }
+    }
+
+    public void VerifyShape()
+    {
+        // Calculate the area of the drawn shape
+        float drawnArea = PlayerPrefs.GetFloat("DrawnArea");
+
+
+        if (drawnArea > minArea && drawnArea <= maxArea)
+        {
+            // Proceed to the next scene if the shape is accurate and complete within the tolerance
+            Debug.Log("Shape verified. Proceeding to next scene.");
+            Debug.Log("drawn area: " + drawnArea );
+
+            //adding this bool value to stop time measuring for imp tracking 
+            string timeEnd = "1";
+            PlayerPrefs.SetString("EndTime", timeEnd);
+
+            
+            // Add code here to load the next scene
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            // Inform the user that the shape is not accurate or complete
+            Debug.Log("Shape is not accurate or complete. Please try again.");
+            PlayerPrefs.SetInt("Phase2IncorrectCount", incorrectCount + 1); //adding count for incorrect, will be used to track improvement
+            Debug.Log("incorrect: " + PlayerPrefs.GetInt("Phase2IncorrectCount"));
+            Debug.Log("drawn area: " + drawnArea);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private float CalculateAreaOfDrawnShape()
+    {
+        float area = 0f;
+        foreach (var lineRenderer in lineRenderers)
+        {
+            Vector3[] positions = new Vector3[lineRenderer.positionCount];
+            lineRenderer.GetPositions(positions);
+
+            // Convert Vector3 points to Vector2 points
+            Vector2[] points2D = new Vector2[positions.Length];
+            for (int i = 0; i < positions.Length; i++)
+            {
+                points2D[i] = new Vector2(positions[i].x, positions[i].y);
+            }
+
+            area += CalculatePolygonArea(points2D);
+        }
+        PlayerPrefs.SetFloat("DrawnArea", area);
+        return area;
+    }
+
+
+
+    private float CalculatePolygonArea(Vector2[] polygonPoints)
+    {
+        float area = 0f;
+        for (int i = 0; i < polygonPoints.Length; i++)
+        {
+            Vector2 currentPoint = polygonPoints[i];
+            Vector2 nextPoint = polygonPoints[(i + 1) % polygonPoints.Length];
+            area += (currentPoint.x * nextPoint.y - nextPoint.x * currentPoint.y);
+        }
+        return Mathf.Abs(area / 2);
     }
 }
