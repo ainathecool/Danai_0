@@ -623,7 +623,7 @@ MonoBehaviour:
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   minArea: 2.25
   maxArea: 2.6
-  nextSceneName: bScene1
+  nextSceneName: WelcometoGames
   outlinedCollider: {fileID: 714779489}
 --- !u!1 &209126684
 GameObject:

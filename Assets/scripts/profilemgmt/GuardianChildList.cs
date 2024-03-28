@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.SceneManagement; 
 using Firebase.Database;
 using System.Collections;
-using static Unity.VisualScripting.Metadata;
 
 public class GuardianChildList : MonoBehaviour
 {
