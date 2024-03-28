@@ -19,6 +19,8 @@ public class TButtonHandler : MonoBehaviour
     private Vector3 originalPosition;
     private Vector3 touchStart;
 
+    private int count;// for imp tracking
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,16 +78,20 @@ public class TButtonHandler : MonoBehaviour
 
     public void OnHintsButtonClicked()
     {
+        count = PlayerPrefs.GetInt("Phase1Hints");
+
         if (!isAnimating)
         {
             if (t1.transform.position != progressBar.transform.position)
             {
                 originalPosition = t1.transform.position;
+                PlayerPrefs.SetInt("Phase1Hints", count + 1);
                 StartCoroutine(AnimationT1());
             }
             else if(t2.transform.position != progressBar.transform.position)
             {
                 originalPosition = t2.transform.position;
+                PlayerPrefs.SetInt("Phase1Hints", count + 1);
                 StartCoroutine(AnimationT2());
             }
 

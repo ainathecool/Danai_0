@@ -67,9 +67,13 @@ public class Phase1DataLogger : MonoBehaviour
             accuracy = 100;
             PlayerPrefs.SetFloat("Accuracy", accuracy);
         }
+        else
+        {
 
-         accuracy = (100 - ((hintsUsed + 1) * 10));
-        PlayerPrefs.SetFloat("Accuracy", accuracy);
+            accuracy = (100 - ((hintsUsed + 1) * 10));
+            PlayerPrefs.SetFloat("Accuracy", accuracy);
+        }
+
 
         return accuracy;
     }
